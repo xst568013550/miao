@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <style>
+    header {
+      background-color: black;
+    }
+
+    header p {
+      width: 600px;
+      margin: auto;
+      color: white;
+    }
+
+    p[id="b"] {
+      width: 600px;
+      height: 150px;
+      padding-top: 20px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    ul {
+      width: 600px;
+      margin: auto;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul li {
+      width: 180px;
+      height: 40px;
+      box-sizing: border-box;
+      box-sizing: content-box;
+      text-align: center;
+    }
+
+    ul :nth-child(n + 5) {
+      margin-left: 210px;
+      margin-top: -px;
+    }
+
+    ul :nth-child(n + 9) {
+      margin-left: 420px;
+    }
+
+    ul :nth-child(4n+5) {
+      margin-top: -244px;
+    }
+
+    ul :nth-child(4n + 9) {
+      margin-top: -244px;
+    }
+
+    ul :hover {
+      background-color: yellow;
+    }
+
+    li {
+      text-align-last: 30px 30px;
+      margin-bottom: 15px;
+      background-color: pink;
+      border: 3px solid black;
+    }
+
+    main div {
+      width: 600px;
+      margin: auto;
+      list-style: none;
+    }
+
+    main div {
+      border-bottom: 1px dotted;
+      padding-top: 1px;
+      margin-bottom: -1px;
+      margin-top: -1px;
+    }
+
+    main div:last-child {
+      border: 1px dotted rgba(0, 0, 0, 0);
+    }
+
+    div[class="a"] {
+      margin-top: 20px;
+      text-align: center;
+      background-color: rgb(235, 72, 235);
+    }
+  </style>
+
+<body>
+  <header>
+    <p>hello world 请调整浏览器窗口大小查看效果</p>
+  </header>
+  <div></div>
+  <p id="b">页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
+    宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
+    宽度600px</p>
+  <ul class=>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+  </ul>
+  <main>
+    <div>link</div>
+    <div>link</div>
+    <div>link</div>
+    <div>link</div>
+    <div>link</div>
+  </main>
+  <div class="a">©版权所有<br>
+    本页所有布局均使用块元素</div>
+</body>
