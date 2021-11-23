@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  ul {
+    display: none;
+    margin: 0;
+  }
+
+  div:hover ul {
+    display: block;
+  }
+
+  ul :hover {
+    display: block;
+
+  }
+
+  div ul ul li {
+    display: none;
+  }
+
+  div ul li:hover li {
+    display: block;
+  }
+
+  li {
+    border: 1px solid black;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100px;
+  }
+
+  div {
+    display: inline-block;
+    border: 1px solid black;
+    width: 50px;
+    height: 20px;
+  }
+
+
+  div[class="bianji"] {
+    position: absolute;
+    left: 100px;
+  }
+
+  div ul li {
+    padding: -2px;
+    position: relative;
+  }
+
+  div ul li {
+    position: relative;
+  }
+
+  div ul ul {
+    position: absolute;
+    left: 100px;
+    top: 0;
+  }
+
+  div li:hover {
+    background-color: rgb(6, 244, 6);
+  }
+</style>
+
+<body>
+  <div class="wenjian">文件
+    <ul>
+      <li>新建文件夹
+        <ul>
+          <li>111</li>
+          <li>222</li>
+          <li>333</li>
+        </ul>
+      </li>
+      <li>新建文件
+        <ul>
+          <li>111</li>
+          <li>222</li>
+          <li>333</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="bianji">编辑
+    <ul>
+      <li>全选
+        <ul>
+          <li>111</li>
+          <li>222</li>
+          <li>333</li>
+        </ul>
+      </li>
+      <li>新建文件
+        <ul>
+          <li>111</li>
+          <li>222</li>
+          <li>333</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+
+</body>
+
+</html>

@@ -2,117 +2,117 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Oald</title>
-  <style>
-    html{
-      width: 100%;
-      height: 100%;
-    }
-    body{
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      min-width: 800px;
-    }
-    div{
-      width: 100%;
-      height: 100%;
-      position: relative;
-      font-size: 0;
-      background-color: rgb(177, 228, 248);
-      }
-    aside{
-      position: absolute;
-      width: 200px;
-      border: 1px solid black;
-      top: 0;
-      bottom: 0;
-    }
-    aside.right1{
-      position: absolute;
-      right: 0;
-      border: 1px solid black;
-    }
-    aside.right2{
-      right: 200px;
-      border: 1px solid black;
-    }
-    aside.left{
-      left: 0px;
-      overflow: auto;
-    }
-    main{
-      position: absolute;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  html {
     height: 100%;
-    border: 1px solid black;
-    left: 200px;
-    right: 400px;
-    background-color: rgb(255, 255, 255);
-    }
-    header{
-      height: 100px;
-      border: 1px solid black;
-    }
-    p{
-      top:100px;
-      border: 1px solid black;
-    }
-    h2{
-      position: absolute;
-      font-size: 25px;
-      left: 20px;
-    }
-    input{
-      width: 140px;
-      position: absolute;
-      top: 80px;
-      left: 10px;
-      right: 40px;
-    }
-    button{
-      height: 20px;
-      position: absolute;
-      right: 6px;
-      top: 81px;
-    }
-    ul{
-      position: absolute;
-      font-size: 16px;
-      top: 100px;
-      left: 15px;
-      list-style: none;
-      padding: 0;
-    }
-    header{
-      font-size: 16px;
-    }
-    h1{
-      border: rgba(0, 0, 0, 0);
-    }
-     ol{
-      position: absolute;
-      top: 120px;
-      font-size: 16px;
-      width: 800px;
 
-    }
-    aside h1{
-      position: absolute;
-      font-size: 23px;
-    right: 10px;
-    top: 20px;
-    }
-  </style>
+  }
+
+  body {
+    margin: 0;
+    height: 100%;
+
+  }
+
+  div {
+    height: calc(100vh);
+    font-size: 0;
+    margin: auto;
+    padding: -10px;
+    overflow: hidden;
+  }
+
+  aside {
+    display: inline-block;
+    width: 200px;
+    height: calc(100vh);
+    background-color: rgb(221, 235, 235);
+    font-size: 16px;
+    border-right: 1px solid black;
+  }
+
+  aside[id="c"] {
+    list-style: none;
+    padding-left: 20px;
+    overflow: auto;
+
+  }
+
+
+
+
+
+  main {
+    width: calc(100% - 600px);
+    height: calc(100vh);
+    background-color: white;
+    border: 1px solid black;
+    font-size: 10px;
+    margin-left: 200px;
+    margin-top: calc(-100vh);
+    border-bottom: rgba(0, 0n, 0, 0);
+    border-top: rgba(0, 0, 0, 0);
+
+
+  }
+
+  header {
+    height: 100px;
+    border-bottom: 1px solid black;
+  }
+
+  header h1 {
+    position: absolute;
+    left: 222px;
+    top: 15px;
+  }
+
+  ol li[id="a"] {
+    position: absolute;
+    top: 50px;
+  }
+
+  section {
+    list-style: none;
+    margin-left: 30px;
+  }
+
+  section ol h3 {
+    position: absolute;
+  }
+
+  aside h1 {
+    text-align: right;
+
+  }
+
+  .a {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 16px;
+    border-left: 1px solid black;
+  }
+
+  .b {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 16px;
+    border-left: 1px solid black;
+    padding: 0;
+  }
+</style>
 
 <body>
   <div>
-    <aside class="left">
+    <aside id="c">
       <h2>Oald se7en</h2>
       <input type="text">
       <button></button>
-      <ul>
       <li>word1</li>
       <li>word2</li>
       <li>word3</li>
@@ -213,13 +213,13 @@
       <li>word98</li>
       <li>word99</li>
       <li>word100</li>
-    </ul>
     </aside>
     <main>
       <header>
         <h1>fantasy</h1>
       </header>
-      <ol>
+      <section>
+        <ol>
           <h3>Lorem, ipsum.</h3>
           <li id="a">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reprehenderit porro sequi commodi atque
@@ -237,12 +237,16 @@
             </p>
           </li>
         </ol>
+      </section>
     </main>
-    <aside class="right1">
+    <aside class="a">
       <h1>Vocabulary</h1>
     </aside>
-    <aside class="right2">
+    <aside class="b">
       <h1>History</h1>
     </aside>
   </div>
+
 </body>
+
+</html>
