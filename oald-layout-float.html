@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  html {
+    width: 100%;
+    height: 100%;
+    font-size: 0px;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 0;
+    overflow: hidden;
+    min-width: 500px;
+  }
+
+  div {
+    float: left;
+    height: 100%;
+    width: 150px;
+    background-color: chocolate;
+    border: 1px solid black;
+  }
+
+  div.b {
+    width: calc(100% - 450px);
+    background-color: cyan;
+    overflow: hidden;
+  }
+
+  div.d {
+    overflow: hidden;
+  }
+</style>
+
+<body>
+  <div class="a"></div>
+  <div class="b"></div>
+  <div class="c"></div>
+  <div class="d"></div>
+</body>
+
+</html>
