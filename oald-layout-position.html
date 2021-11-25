@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Oald-layout-position.html</title>
 </head>
 <style>
   html {
@@ -25,40 +25,46 @@
     margin: auto;
     padding: -10px;
     overflow: hidden;
+    min-width: 800px;
   }
 
   aside {
     display: inline-block;
     width: 200px;
-    height: calc(100vh);
     background-color: rgb(221, 235, 235);
     font-size: 16px;
     border-right: 1px solid black;
+    top: 0;
+    bottom: 0;
   }
 
   aside[id="c"] {
     list-style: none;
     padding-left: 20px;
     overflow: auto;
-
+  }
+  aside[class="b"] {
+    position: absolute;
+    right: 0;
+    border: 1px solid black;
+    border-top:rgba(0, 0, 0, 0) ;
+  }
+  aside[class="a"]{
+    position: absolute;
+    right: 200px;
   }
 
-
-
-
-
   main {
-    width: calc(100% - 600px);
-    height: calc(100vh);
-    background-color: white;
+    position: absolute;
+    left: 220px;
+    right: 400px;
     border: 1px solid black;
-    font-size: 10px;
-    margin-left: 200px;
-    margin-top: calc(-100vh);
+    font-size: 16px;
     border-bottom: rgba(0, 0n, 0, 0);
     border-top: rgba(0, 0, 0, 0);
-
-
+    top: 0;
+    bottom: 0;
+    min-width: 300px;
   }
 
   header {
@@ -72,9 +78,9 @@
     top: 15px;
   }
 
-  ol li[id="a"] {
+  ol  {
     position: absolute;
-    top: 50px;
+    top: 180px;
   }
 
   section {
@@ -84,6 +90,8 @@
 
   section ol h3 {
     position: absolute;
+    top: -40px;
+
   }
 
   aside h1 {
@@ -98,7 +106,7 @@
     border-left: 1px solid black;
   }
 
-  .b {
+  aside[class="a"] {
     display: inline-block;
     overflow: hidden;
     font-size: 16px;
