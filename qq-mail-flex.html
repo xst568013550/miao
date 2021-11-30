@@ -31,37 +31,38 @@
 
   span {
     width: 200px;
-    height: 100%;
     background-color: blue;
     border: 1px solid black;
   }
 
   span.a {
-    flex-wrap: wrap;
+    flex-flow: wrap;
     height: 200px;
     width: 100%;
   }
 
   span.b {
-    /* flex-basis: 200px; */
+    height: calc(100% - 200px);
     background-color: rgb(105, 255, 5);
     flex-flow: column;
     gap: 0;
-    font-size: 16px;
+    font-size: 20px;
     overflow: auto;
   }
 
   span.c {
+    height: calc(100% - 200px);
     font-size: 20px;
     overflow: auto;
-    flex-grow: 3;
+    flex-grow: 1;
     background-color: rgb(255, 0, 0);
   }
 </style>
 
 <body>
   <div>
-    <span class="a" style="order:-1"></span>
+    <span class="a" style="order:-1">
+    </span>
     <span class="b">
       <ul>
         <li></li>
