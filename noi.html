@@ -8,7 +8,6 @@ alert(a + b)
 var a = Number(prompt('a'))
 var b = Number(prompt('b'))
 var c = Number(prompt('c'))
-(-10000<a, b, c<10000)
 alert((a + b) * c)
 </script>
 <script type="xxx" id="ch0103/03">
@@ -17,28 +16,78 @@ var b = Number(prompt('b'))
 var c = Number(prompt('c'))
 alert((a + b) / c)
 </script>
-<script id="ch0103/04">
-  var a = Number(prompt('a'))
-  var b = Number(prompt('b != 0'))
-  alert(a / b && a % b)
+<script type="xxx" id="ch0103/04">
+var a = Number(prompt('a'))
+var b = Number(prompt('b != 0'))
+alert(a / b && a % b)
 </script>
-<script id="ch0103/05">
-
+<script type="xxx" id="ch0103/05">
+var a = Number(prompt('a'))
+var b = Number(prompt('b'))
+alert( Math.round(a / b * 1000000000) / 1000000000)
+</script>
+<script type="xxx" id="ch0103/06">
+var a = Number(prompt('a'))
+var b = Number(prompt('b'))
+var A = (b / a)
+var B = A * 100
+var B = A.toFixed(9)
+alert( B + "%")
+</script>
+<script type="xxx" id="ch0103/07">
+var x = Number(prompt('x'))
+var a = Number(prompt('a'))
+var b = Number(prompt('b'))
+var c = Number(prompt('c'))
+var d = Number(prompt('d'))
+var A = (a*(x*x*x))+(b*(x*x))+(c*x)+d
+var A = A.toFixed(7)
+alert(A)
 
 </script>
-<script id="ch0103/06">
-
-
-</script>
-<script id="ch0103/07">
-
-
-</script>
-<script id="ch0103/08">
-
+<script type="xxx" id="ch0103/08">
+var a = Number(prompt('a'))
+var A = 5 * (a - 32) / 9
+var A = A.toFixed(5)
+alert(A)
 
 </script>
-<script id="ch0103/09">
-
-
+<script type="xxx" id="ch0103/09">
+var r = Number(prompt('r'))
+var pi = 3.14159
+var a = 2 * r
+var b = 2 * pi * r
+var c = pi* r * r
+alert(a)
+alert(b)
+alert(c)
+</script>
+<script type="XXX" id="ch0103/10">
+  var r1 = Number(prompt('r1'))
+  var r2 = Number(prompt('r2'))
+  var R = 1 / ( 1 / r1 + 1 / r2 )
+  var R = R.toFixed(2)
+  alert(R)
+</script>
+<script type="xxx" id="ch0103/11">x
+ var a = Number(prompt('a'))
+ var b = Number(prompt('b'))
+ var a = k * b + r
+ console.log( 0 <= r < b )
+ alert(a / b)
+</script>
+<script type="xxx" id="ch0103/12">
+var r = Number(prompt('r'))
+var pi = 3.14
+var V = 4 / 3 * ( pi * r *r *r )
+var V = V.toFixed(2)
+alert(V)
+ </script>
+<script id="ch0103/13">
+  var n = Number(prompt('n'))
+  var a = math.trunc(n / 100)
+  var b = math.trunc(n / 10 - a * 10)
+  var c = math.trunc(n % 10)
+  var d = (c * 100 + b * 10 + a)
+  alert( c != 0 ? d : "0" + b + a )
 </script>
