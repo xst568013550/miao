@@ -33,7 +33,7 @@ alert( Math.round(a / b * 1000000000) / 1000000000)
 <script type="xxx" id="ch0103/06">
 var a = Number(prompt('a'))
 var b = Number(prompt('b'))
-var A = (b / a)
+var A = parseInt(b / a)
 var B = A * 100
 var B = A.toFixed(3)
 console.log( B + "%")
@@ -62,9 +62,7 @@ var pi = 3.14159
 var a = 2 * r
 var b = 2 * pi * r
 var c = pi* r * r
-alert(a)
-alert(b)
-alert(c)
+console.log(a,b,c)
 </script>
 <script type="XXX" id="ch0103/10">
   var r1 = Number(prompt('r1'))
@@ -78,7 +76,6 @@ alert(c)
  var b = Number(prompt('b'))
  var c = a % b
  console.log(c)
- alert(a / b)
 </script>
 <script type="xxx" id="ch0103/12">
 var r = Number(prompt('r'))
@@ -104,6 +101,12 @@ alert(V)
   console.log(b)
 </script>
 <script type="xxx" id="ch0103/15">
+  var n = Number(prompt('n'))
+  var x = Number(prompt('x'))
+  var y = Number(prompt('y'))
+  console.log(Math.floor(n - (y / x)))
+</script>
+<script id="ch0103/16">
   var n = Number(prompt('n'))
   var x = Number(prompt('x'))
   var y = Number(prompt('y'))
