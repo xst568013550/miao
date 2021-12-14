@@ -11,19 +11,19 @@ var c = Number(prompt('c'))
 alert((a + b) * c)
 </script>
 <script type="xxx" id="ch0103/03">
-var a = Number(prompt('a'))
-var b = Number(prompt('b'))
-var c = Number(prompt('c'))
+  var a = Number(prompt('a = '))
+  var b = Number(prompt('b = '))
+  var c = Number(prompt('c = '))
 var d = ((a + b) / c)
 d = parseInt(d)
-alert(d)
+console.log(d)
 </script>
 <script type="xxx" id="ch0103/04">
 var a = Number(prompt('a'))
 var b = Number(prompt('b != 0'))
-var c = (a / b)
+var c = parseInt(a / b)
 var d = (a % b)
-alert(c, d)
+console.log(c, d)
 </script>
 <script type="xxx" id="ch0103/05">
 var a = Number(prompt('a'))
@@ -87,7 +87,7 @@ var V = 4 / 3 * ( pi * r *r *r )
 var V = V.toFixed(2)
 alert(V)
  </script>
-<script id="ch0103/13">
+<script type="xx" id="ch0103/13">
   var n = Number(prompt('n'))
   var a = math.trunc(n / 100)
   var b = math.trunc(n / 10 - a * 10)
