@@ -35,8 +35,8 @@ var a = Number(prompt('a'))
 var b = Number(prompt('b'))
 var A = (b / a)
 var B = A * 100
-var B = A.toFixed(9)
-alert( B + "%")
+var B = A.toFixed(3)
+console.log( B + "%")
 </script>
 <script type="xxx" id="ch0103/07">
 var x = Number(prompt('x'))
@@ -73,11 +73,11 @@ alert(c)
   var R = R.toFixed(2)
   alert(R)
 </script>
-<script type="xxx" id="ch0103/11">x
+<script type="xxx" id="ch0103/11">
  var a = Number(prompt('a'))
  var b = Number(prompt('b'))
- var a = k * b + r
- console.log( 0 <= r < b )
+ var c = a % b
+ console.log(c)
  alert(a / b)
 </script>
 <script type="xxx" id="ch0103/12">
@@ -87,11 +87,25 @@ var V = 4 / 3 * ( pi * r *r *r )
 var V = V.toFixed(2)
 alert(V)
  </script>
-<script type="xx" id="ch0103/13">
+<script type="xxx" id="ch0103/13">
   var n = Number(prompt('n'))
-  var a = math.trunc(n / 100)
-  var b = math.trunc(n / 10 - a * 10)
-  var c = math.trunc(n % 10)
+  var a = Math.trunc(n / 100)
+  var b = Math.trunc(n / 10 - a * 10)
+  var c = Math.trunc(n % 10)
   var d = (c * 100 + b * 10 + a)
-  alert( c != 0 ? d : "0" + b + a )
+  console.log( c != 0 ? d : "0" + b + a )
+</script>
+<script type="xxx" id="ch0103/14">
+  var s = Number(prompt('s'))
+  var r = Number(prompt('r'))
+  var pi = 3.14159
+  var a = pi * (r * r)* s / 1000
+  var b = Math.ceil(20 / a)
+  console.log(b)
+</script>
+<script type="xxx" id="ch0103/15">
+  var n = Number(prompt('n'))
+  var x = Number(prompt('x'))
+  var y = Number(prompt('y'))
+  console.log(Math.floor(n - (y / x)))
 </script>
