@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style type="text/scss"></style>
+<style type="text/less">
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .a,
+  .b,
+  .c,
+  .d,
+  .e,
+  .f {
+    border: 2px solid black;
+
+  }
+
+  .v {
+    margin-top: 200px;
+    perspective: 800px;
+    perspective-origin: 50% 100px;
+  }
+
+  .z {
+    position: relative;
+    width: 300px;
+    position: relative;
+    width: 300px;
+    transform-style: preserve-3d;
+  }
+
+  .a {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    background-color: red;
+    transform: translateZ(150px);
+  }
+
+  .b {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    background-color: orange;
+    transform: translateZ(-150px) rotateY(180deg);
+  }
+
+  .c {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    background-color: yellow;
+    transform: rotateX(-90deg) translateY(-150px);
+    transform-origin: top center;
+  }
+
+  .d { 
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    background-color: green;
+    transform: rotateX(90deg) translateY(150px);
+    transform-origin: bottom center;
+  }
+
+  .e {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    background-color: aqua;
+    transform: rotateY(270deg) translateX(-150px);
+    transform-origin: left center;
+  }
+
+  .f {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    background-color: blue;
+    transform: rotateY(-270deg) translateX(150px);
+    transform-origin: top right;
+  }
+
+  .z:hover {
+    transition: 10s;
+    transform: rotatey(1200deg) rotatex(1200deg);
+    transform-style: preserve-3d;
+
+  }
+</style>
+
+<body>
+  <div class="v">
+    <div class="z">
+      <div class="a"></div>
+      <div class="b"></div>
+      <div class="c"></div>
+      <div class="d"></div>
+      <div class="e"></div>
+      <div class="f"></div>
+    </div>
+  </div>
+</body>
+<script src="less.min.js"></script>
+<script src="sass.link.min.js"></script>
+
+</html>
