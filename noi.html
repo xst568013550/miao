@@ -32,9 +32,9 @@ alert( Math.round(a / b * 1000000000) / 1000000000)
 <script type="xxx" id="ch0103/06">
 var a = Number(prompt('a'))
 var b = Number(prompt('b'))
-var A = (b / a)*100
+var A = ( b / a ) * 100
 var A = A.toFixed(3)
-console.log( A + "%")
+console.log( A + "%" )
 </script>
 <script type="xxx" id="ch0103/07">
 var x = Number(prompt('x'))
@@ -330,3 +330,73 @@ alert(V)
     console.log(c)
   }
 </script>
+<script type="xxx" id="ch0104/16">
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  var c = Number(prompt('c'))
+  if ((a + b) > c && (a + c) > b && (b + c) > a) {
+    console.log('yes')
+  } else {
+    console.log('no')
+  }
+</script>
+<script type="xxx" id="ch0104/17">
+  var a = Number(prompt('a'))
+  if ((a % 100 != 0) && (a % 4 == 0) || (a % 400 == 0)) {
+    console.log('y')
+  } else {
+    console.log('n')
+  }
+</script>
+<script type="xxx" id="ch0104/18">
+  var x = Number(prompt('x'))
+  var y = Number(prompt('y'))
+  if (x <= 1 && x >= -1 && y < 11 && y > -1) {
+    console.log('yes')
+  } else {
+    console.log('no')
+  }
+</script>
+<script type="xxx" id="ch0104/19">
+  var x = Number(prompt('x'))
+  var y = Number(prompt('y'))
+  var o = prompt('o')
+  if (o == '+') {
+    var A = (x + y)
+    console.log(A)
+  } else if (o == '-') {
+    var A = (x - y)
+    console.log(A)
+  } else if (o == '*') {
+    var A = (x * y)
+    console.log(A)
+  } else if (o == '/' && y != 0) {
+    var A = (x / y)
+    console.log(A)
+  } else if (o == '/' && y == 0) {
+    console.log('DIvided by zero!')
+  } else {
+    console.log('Invalid operator!')
+  }
+</script>
+<script type="xxx" id="ch0104/20">
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  var c = Number(prompt('c'))
+  var d = b * b - 4 * a * c
+  if (d == 0) {
+    var x = -b / (2 * a)
+    x = x.toFixed(5)
+    console.log("x1=x2=" + x)
+  } else if (d > 0) {
+    var x = Math.sqrt(d) - b
+    var x1 = x / (2 * a)
+    x1 = x1.toFixed(5)
+    console.log("x1=x2=" + x)
+    var x2 = (-Math.sqrt(d) - b) / (2 * a)
+    var x2 = x2.toFixed(5)
+    console.log('x1=' + x1 + ';' +'x2=' + x2)
+  }
+
+</script>
+
