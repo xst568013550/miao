@@ -1,3 +1,4 @@
+<!-- 1.3 -->
 <script type="xxx" id="ch0103/01">
 var a = Number(prompt('a'))
 var b = Number(prompt('b'))
@@ -166,6 +167,7 @@ alert(V)
   alert(ans)
 </script>
 
+<!-- 1.4 -->
 <script type="xxx" id="ch0104/01">
   var n = Number(prompt('n'))
   if (n > 0) {
@@ -423,5 +425,142 @@ alert(V)
   } else {
     console.log(B)
   }
+</script>
+
+<!-- 1.5 -->
+<script type="xxx" id="ch0105/01">
+  var n = Number(prompt('人数'))
+  var x = 0
+  var sum = 0
+  while (x < n) {
+    var y = Number(prompt('年龄'))
+    var sum = sum + y
+    var x = x + 1
+  }
+  var average = sum / n
+  average = average.toFixed(2)
+  console.log(average)
+</script>
+<script type="xxx" id="ch0105/02">
+  var x = 0
+  var sum = 0
+  while (x < 12) {
+    var n = Number(prompt('金额'))
+    var sum = sum + n
+    var x = x + 1
+  }
+  var average = sum / 12
+  average = average.toFixed(2)
+  console.log('$' + average)
+</script>
+<script type="xxx" id="ch0105/03">
+  var x = 0
+  var sum = 0
+  while (x < 12) {
+    var n = Number(prompt('金额'))
+    var sum = sum + n
+    var x = x + 1
+  }
+  var average = sum / 12
+  average = average.toFixed(2)
+  console.log('$' + average)
+</script>
+<script type="xxx" id="ch0105/04">
+  var n = Number(prompt('人数'))
+  var x = 0
+  var sum = 0
+  while (x < n) {
+    var y = Number(prompt('数据'))
+    var sum = sum + y
+    var x = x + 1
+  }
+  var average = sum / n
+  average = average.toFixed(5)
+  console.log(average)
+</script>
+<script type="xxx" id="ch0105/05">
+  debugger
+  var n = Number(prompt('人数'))
+  var x = 0  //变量
+  var max = 0
+  while (x < n) {
+    var bo = Number(prompt('成绩'))
+    var x = x + 1
+    if (max <= bo) {
+      max = bo
+    }
+  }
+  console.log(max)
+</script>
+<script type="xxx" id="ch0105/06">
+  var n = Number(prompt('人数'))
+  var x = 0  //变量
+  var max = 0
+  var min = 0
+  while (x < n) {
+    var bo = Number(prompt('成绩'))
+    var x = x + 1
+    if (max <= bo) {
+      max = bo
+    } else if (min <= bo) {
+      min = bo
+    }
+  }
+  console.log(max - min)
+</script>
+<script type="xxx" id="ch0105/07">
+  var n = Number(prompt())
+  var a = 0
+  var b = 0
+  var c = 0
+  var sum
+  var i = 1
+  while (i <= n) {
+    i = i + 1
+    a = a + Number(prompt())
+    b = b + Number(prompt())
+    c = c + Number(prompt())
+  }
+  sum = a + b + c
+  console.log(a + ' ' + b + ' ' + c + ' ' + sum)
+</script>
+<script type="xxx" id="ch0105/08">
+  var n = Number(prompt())
+  var sum = 0
+  var i = 1
+  var deg = 0
+  while (i < n) {
+    i = i + 1
+    sum = sum + Number(prompt())
+  }
+  deg = (n - 2) * 180 - sum
+  console.log(deg)
+</script>
+<script type="xxx" id="ch0105/09">
+  var m = Number(prompt())
+  var n = Number(prompt())
+  var sum = 0
+  while (m <= n) {
+    if (m % 2 != 0) {
+      sum = sum + m
+    }
+    m = m + 1
+  }
+  console.log(sum)
+</script>
+
+
+<script type="xxx">
+  // 猜数字游戏
+  var number = Math.round(Math.random() * 100)
+  do {
+    var n = Number(prompt())
+    if (n > number) {
+      alert('too big')
+    } else if (n < number) {
+      alert('too small')
+    }
+  } while (n != number)
+  alert('大聪明 恭喜！')
 </script>
 
