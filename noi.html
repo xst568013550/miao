@@ -225,11 +225,9 @@ alert(V)
     console.log('0')
   }
 </script>
-<script type="xxx" id="ch0104/08">
+<script type="xx" id="ch0104/08">
   var x = Number(prompt('n'))
-    if (x % 3 != 0) {
-      console.log('no')
-  }else if (a % 5 == 0) {
+    if (x % 3 == 0 && x % 5 == 0){
     console.log('yes')
   } else {
     console.log('no')
@@ -237,25 +235,22 @@ alert(V)
 </script>
 <script type="xxx" id="ch0104/09">
   var x = parseInt(prompt('n'))
-  if (x % 3 == 0 && x % 5 == 0 && x % 7 == 0) {
-    console.log(3, 5, 7)
-  } else {
-    if (x % 3 == 0 && x % 5 == 0) {
-      console.log(3, 5)
-    } else if (x % 3 == 0 && x % 7 == 0) {
-      console.log(3, 7)
-    } else if (x % 5 == 0 && x % 7 == 0) {
-      console.log(5, 7)
-    } else {
-      if (x % 3 == 0) {
-        console.log(3)
-      } else if (x % 5 == 0) {
-        console.log(5)
-      } else {
-        console.log(7)
-      }
+    var s = false
+    if(x % 3 == 0){
+      console.log(3)
+      s = true
     }
-  }
+    if(x % 5 == 0){
+      console.log(5)
+      s = true
+    }
+    if(x % 7 == 0){
+      console.log(7)
+      s = true
+    }
+    if(!s){
+      console.log('n')
+    }
 </script>
 <script type="xxx" id="ch0104/10">
   var x = Number(prompt('n'))
@@ -287,17 +282,18 @@ alert(V)
     console.log('Bike')
   }
 </script>
-<script type="xxx" id="ch0104/13">x
+<script type="xxx" id="ch0104/13">
  var a = Number(prompt(a))
-  if (a < 5){
-    var ans = -a + 2.5
-    alert(ans.toFixed(3))
-  }else if (a < 10){
-    var ans = 2 - 1.5 * (a - 3)**2
-    alert(ans.toFixed(3))
+  var y
+  if (0 <= a < 5) {
+    var y = -a + 2.5
+    alert(y.toFixed(3))
+  } else if (5 <= a < 10) {
+    var y = 2 - 1.5 * (a - 3) ** 2
+    alert(y.toFixed(3))
   }else{
-    var ans = a / 2 - 1.5
-    alert(ans.toFixed(3))
+      var y = a / 2 - 1.5
+      alert(y.toFixed(3))
   }
 </script>
 <script type="xxx" id="ch0104/14">
@@ -379,7 +375,7 @@ alert(V)
     console.log('Invalid operator!')
   }
 </script>
-<script type="xxx" id="ch0104/20">
+<script type="xx" id="ch0104/20">
   var a = Number(prompt('a'))
   var b = Number(prompt('b'))
   var c = Number(prompt('c'))
@@ -389,13 +385,18 @@ alert(V)
     x = x.toFixed(5)
     console.log("x1=x2=" + x)
   } else if (d > 0) {
-    var x = Math.sqrt(d) - b
-    var x1 = x / (2 * a)
+    var p = Math.sqrt(d)
+    var x1 = -b / (2 * a) + Math.sqrt(d) / (2 * a)
     x1 = x1.toFixed(5)
-    console.log("x1=x2=" + x)
-    var x2 = (-Math.sqrt(d) - b) / (2 * a)
+    var x2 = -b / (2 * a) - Math.sqrt(d) / (2 * a)
     var x2 = x2.toFixed(5)
     console.log('x1=' + x1 + ';' +'x2=' + x2)
+  }else if (d < 0){
+    var s = b * 2 - ( 4 * a * c ) * (2 * 2)
+    var s = s.toFixed(5)
+    var v = Math.sqrt(4 * a * c - b * b )
+    var v = v.toFixed(5)
+    console.log('x1='+s+'i'+';'+'x2='v+'i')
   }
 
 </script>
