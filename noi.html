@@ -227,7 +227,7 @@ alert(V)
 </script>
 <script type="xx" id="ch0104/08">
   var x = Number(prompt('n'))
-    if (x % 3 == 0 && x % 5 == 0){
+  if (x % 3 == 0 && x % 5 == 0){
     console.log('yes')
   } else {
     console.log('no')
@@ -263,9 +263,9 @@ alert(V)
 </script>
 <script type="xxx" id="ch0104/11">
   var x = Number(prompt('n'))
-    if (x == 1 || x == 3 || x == 5){
-      console.log('no')
-    }
+  if (x == 1 || x == 3 || x == 5){
+    console.log('no')
+  }
     else {
     console.log('yes')
   }
@@ -338,11 +338,22 @@ alert(V)
 </script>
 <script type="xxx" id="ch0104/17">
   var a = Number(prompt('a'))
-  if ((a % 100 != 0) && (a % 4 == 0) || (a % 400 == 0)) {
-    console.log('y')
-  } else {
-    console.log('n')
-  }
+  if (a % 4 == 0) {
+    if (a % 100 == 0) {
+      if (a % 400 !== 0) {
+        console.log("N");
+      } else {
+        console.log("Y");
+      }
+    }
+    if (a % 3200 == 0) {
+      console.log("N");
+    } else {
+      console.log("Y");
+    }
+  } else if (console.log("N"));
+
+
 </script>
 <script type="xxx" id="ch0104/18">
   var x = Number(prompt('x'))
