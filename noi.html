@@ -466,7 +466,7 @@ alert(V)
   console.log(average)
 </script>
 
-<script type="xxx" id="ch0105/04">x
+<script type="xxx" id="ch0105/04">
   var n = Number(prompt('人数'))
   var x = 0 //变量
   var sum = 0 //数据总和
@@ -476,7 +476,7 @@ alert(V)
     sum = sum + y
   }
   var average = sum / n
-  average = average.toFixed(5)add
+  average = average.toFixed(5)
   console.log(sun + average)
 </script>
 <script type="xxx" id="ch0105/05">
@@ -622,7 +622,7 @@ alert(V)
     i = i + 1
     sum2 = sum * (1 + 0.001)
   }
-  sum =((n * sum2).toFixed(4))
+  sum =((m * sum2).toFixed(4))
   console.log(sum)
 </script>
 <script type="xxx" id="ch0105/15">
@@ -722,24 +722,38 @@ alert(V)
     L = L / 2//L / 2 经过循环，会让弹球不断的只剩下一半的高度
   }
     console.log(N.toFixed(4))
-    console.log(L.toFixed(7))
+    console.log(L.toFixed(7)
 </script>
 <script id="ch0105/21">
-  var L = Number(prompt(''))
-  var i = 0
-  while (L != 1) {
-    if (L % 2 == 1) {
-      A = L * 3 + 1
-      A = L
+    var L = Number(prompt(''))
+      while (L != 1) {
+      if (L % 2 == 1) {
+              var A = L * 3 + 1
+              console.log(L + '*3+1=' + A)
+              L = A
+            } else if (L % 2 == 0) {
+              var A = L / 2
+              console.log(L + '/2=' + A)
+              L = A
+            }
+          } console.log('End')
+        </script>
+  <script type="XXX" id="ch0105/22">
+  
+  </script>
+  <script type="XXX" id="ch0105/23">
+    var L = Number(prompt(''))
+    while (L != 1)   {
+      if (L % 2 == 1) {
+        var A = L * 3 + 1
       console.log(L + "*3+1=" + A)
+      L = A
     } else if (L % 2 == 0) {
-      A = L / 2
-      A = L
+      var A = L / 2
       console.log(L + "/2=" + A)
+      L = A
     }
-    i = i + 1
-  }
-
+    } console.log('End')
 </script>
 
 <!--
