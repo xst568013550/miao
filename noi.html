@@ -639,20 +639,120 @@ alert(V)
   sum = Math.trunc(M * rate)
   console.log(sum)
 </script>
-
-
-
-<script type="xxx">
-  // 猜数字游戏
-  var number = Math.round(Math.random() * 100)
-  do {
-    var n = Number(prompt())
-    if (n > number) {
-      alert('too big')
-    } else if (n < number) {
-      alert('too small')
+<script type="xxx" id="ch0105/16">
+  var n = Number(prompt(''))
+  var k = Number(prompt(''))
+  var sum = 1
+  var b = 0
+  var a = 1
+  var i = 1
+  while (b <= sum) {
+    a = a * (1 + k * 0.01)
+    i = i + 1
+    sum = 200 * a //总房价
+    b = i * n
+  }
+  if (i <= 20) {
+    console.log(i)
+  } else {
+    console.log('Impossible')
+  }
+</script>
+<script type="xxx" id="ch0105/17">
+  var k = Number(prompt(''))
+  var sum = 2
+  var a = 1
+  var b = 0
+  var c
+  var i = 1
+  while (i <= k) {
+    c = a + b
+    a = b
+    b = c
+    i = i + 1
+  }
+    console.log(c)
+</script>
+<script type="xxx" id="ch0105/18">
+  var n = Number(prompt())
+    var i = 2
+    var total
+    var effective
+    var x
+    var y
+    total = Number(prompt())//鸡尾酒疗法的总病例数
+    effective = Number(prompt())//鸡尾酒疗法治好的人数
+    x = effective / total * 100//计算出鸡尾酒疗法的治好的人数比例
+    while (i <= n) {
+      total = Number(prompt())//新疗法的总病例数
+      effective = Number(prompt())//新疗法治好的人数
+      y = effective / total * 100//计算出新疗法的人数比例
+      i = i + 1
+      if (y - x > 5) {//当新疗法的比例减去鸡尾酒疗法的比例大于5则疗法为更差
+        console.log('better')//所以输出
+      } else if (x - y > 5) {//当鸡尾酒疗法的比例减去新疗法的比例大于5则疗法为更好
+        console.log('worse')
+      } else {//否则 进入这个环节
+        console.log('same')
+      }
     }
-  } while (n != number)
-  alert('大聪明 恭喜')
+</script>
+<script type="XXX" id="ch0105/19">
+  var k = Number(prompt(''))
+  var o = 0
+  for (var i = 1; i <= k; i++) {
+    var A = Number(prompt(''))
+    var B = Number(prompt(''))
+    var C = Number(prompt(''))
+    D = ((A) ** 2) + ((B) ** 2)
+    D = Math.sqrt(D)
+    F = (D * 2 / 50) + (1 + 0.5) * C
+    F = Math.ceil(F)
+  }
+      console.log(F)
+</script>
+<script type="xxx" id="ch0105/20">
+  var L = Number(prompt(''))
+  var N = -L
+  var i = 0
+  var B = 10
+    while (i < B) {//总共运行10次
+    i = i + 1
+    N = N + 2 * L//-L + 2 * L=N
+    L = L / 2//L / 2 经过循环，会让弹球不断的只剩下一半的高度
+  }
+    console.log(N.toFixed(4))
+    console.log(L.toFixed(7))
+</script>
+<script id="ch0105/21">
+  var L = Number(prompt(''))
+  var i = 0
+  while (L != 1) {
+    if (L % 2 == 1) {
+      A = L * 3 + 1
+      A = L
+      console.log(L + "*3+1=" + A)
+    } else if (L % 2 == 0) {
+      A = L / 2
+      A = L
+      console.log(L + "/2=" + A)
+    }
+    i = i + 1
+  }
+
 </script>
 
+<!--
+// <script type="xxx">
+//   // 猜数字游戏
+//   var number = Math.round(Math.random() * 100)
+//   do {
+//     var n = Number(prompt())
+//     if (n > number) {
+//       alert('too big')
+//     } else if (n < number) {
+//       alert('too small')
+//     }
+//   } while (n != number)
+//   alert('大聪明 恭喜')
+// </script> -->
