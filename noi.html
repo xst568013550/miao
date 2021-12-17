@@ -722,38 +722,91 @@ alert(V)
     L = L / 2//L / 2 经过循环，会让弹球不断的只剩下一半的高度
   }
     console.log(N.toFixed(4))
-    console.log(L.toFixed(7)
+    console.log(L.toFixed(7))<script type="XXX" id="ch0105/22">
+      var budget
+      var month = 0
+      var cash = 0
+      var savings = 0
+      var firstmonth = 0
+      var surplus
+      while (month < 12) {
+        cash = cash + 300
+        month = month + 1
+        budget = Number(prompt())
+        surplus = cash - budget
+        if (surplus >= 100) {
+          cash = surplus % 100
+          savings = surplus - cash + savings
+        } else {
+          cash = surplus
+        }
+        while (firstmonth == 0 && cash < 0) {
+          firstmonth = month
+          console.log('-' + firstmonth)
+        }
+      }
+      if (firstmonth == 0) {
+        cash = cash + savings * (1 + 0.2)
+        console.log(cash)
+      }
+    </script>
 </script>
-<script id="ch0105/21">
+<script type="xxx" id="ch0105/21">
     var L = Number(prompt(''))
       while (L != 1) {
-      if (L % 2 == 1) {
-              var A = L * 3 + 1
+        if (L % 2 == 1) {
+          var A = L * 3 + 1
               console.log(L + '*3+1=' + A)
               L = A
-            } else if (L % 2 == 0) {
+    } else if (L % 2 == 0) {
               var A = L / 2
               console.log(L + '/2=' + A)
               L = A
-            }
-          } console.log('End')
-        </script>
-  <script type="XXX" id="ch0105/22">
-  
-  </script>
-  <script type="XXX" id="ch0105/23">
-    var L = Number(prompt(''))
-    while (L != 1)   {
-      if (L % 2 == 1) {
-        var A = L * 3 + 1
-      console.log(L + "*3+1=" + A)
-      L = A
-    } else if (L % 2 == 0) {
-      var A = L / 2
-      console.log(L + "/2=" + A)
-      L = A
+          }
+        } console.log('End')
+      </script>
+      <script type="XXX" id="ch0105/22">
+        var budget
+        var month = 0
+        var cash = 0
+        var savings = 0
+        var firstmonth = 0
+        var surplus
+        while (month < 12) {
+          cash = cash + 300
+          month = month + 1
+          budget = Number(prompt())
+          surplus = cash - budget
+          if (surplus >= 100) {
+            cash = surplus % 100
+            savings = surplus - cash + savings
+          } else {
+            cash = surplus
+          }
+          while (firstmonth == 0 && cash < 0) {
+            firstmonth = month
+            console.log('-' + firstmonth)
+          }
+        }
+        if (firstmonth == 0) {
+          cash = cash + savings * (1 + 0.2)
+          console.log(cash)
+        }
+      </script>
+
+<script type="xxx" id="ch0105/23">
+  var z = Number(prompt(''))//总量
+  var R = Number(prompt(''))//人数
+  var s = 0
+  for (var i = 0; i < R; i++) {
+    var L = Number(prompt(''))//每个人的量
+    if (z - L > 0) {
+      z = z - L//总量=总量-每个人的量
+    } else {
+      s = s + 1//拒绝的计数
     }
-    } console.log('End')
+    }
+    console.log(z)
 </script>
 
 <!--
