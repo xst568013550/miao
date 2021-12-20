@@ -722,34 +722,8 @@ alert(V)
     L = L / 2//L / 2 经过循环，会让弹球不断的只剩下一半的高度
   }
     console.log(N.toFixed(4))
-    console.log(L.toFixed(7))<script type="XXX" id="ch0105/22">
-      var budget
-      var month = 0
-      var cash = 0
-      var savings = 0
-      var firstmonth = 0
-      var surplus
-      while (month < 12) {
-        cash = cash + 300
-        month = month + 1
-        budget = Number(prompt())
-        surplus = cash - budget
-        if (surplus >= 100) {
-          cash = surplus % 100
-          savings = surplus - cash + savings
-        } else {
-          cash = surplus
-        }
-        while (firstmonth == 0 && cash < 0) {
-          firstmonth = month
-          console.log('-' + firstmonth)
-        }
-      }
-      if (firstmonth == 0) {
-        cash = cash + savings * (1 + 0.2)
-        console.log(cash)
-      }
-    </script>
+    console.log(L.toFixed(7))
+</script>
 </script>
 <script type="xxx" id="ch0105/21">
     var L = Number(prompt(''))
@@ -765,7 +739,7 @@ alert(V)
           }
         } console.log('End')
       </script>
-      <script type="XXX" id="ch0105/22">
+      <script type="XXX" id="ch0105/22">//xxx
         var budget
         var month = 0
         var cash = 0
@@ -808,18 +782,291 @@ alert(V)
     }
     console.log(z)
 </script>
+<script type="xxx" id="ch0105/24">
+  var z = Number(prompt(''))
+  var s = 1
+  var v = 0
+  var k = 0
+  for (var i = 0; i < z; i++) {
+    var A = Number(prompt(''))//收缩压
+    var B = Number(prompt(''))//舒张压
+    if (A >= 90 && A <= 140 && B >= 60 && B <= 90) {
+      s = s + 1
+      if (s > 1) {
+        k = k + 1
+      }
+    } else
+      s = 0
+  }
+  console.log(k)
+</script>
+<script type="xxx" id="ch0105/25">
+  for (var i = 49; i <= 7; i++) {
+    var a7 = i % 7
+    var b7 = (i - a7) / 7 % 7
+    var c7 = (i - a7 - b7 * 7) / 7 / 7 % 7
 
-<!--
-// <script type="xxx">
-//   // 猜数字游戏
-//   var number = Math.round(Math.random() * 100)
-//   do {
-//     var n = Number(prompt())
-//     if (n > number) {
-//       alert('too big')
-//     } else if (n < number) {
-//       alert('too small')
-//     }
-//   } while (n != number)
-//   alert('大聪明 恭喜')
-// </script> -->
+    var a9 = i % 9
+    var b9 = (i - a9) / 9 % 9
+    var c9 = (i - a9 - b7 * 9) / 9 / 9 % 9
+    if (a7 == c9 && b7 == b9 && c7 == a9) {
+      console.log(i, '' + c7 + b7 + a7, '' + c9 + b9 + c9)
+      break
+    }
+  }
+</script>
+<script type="xxx" id="ch0105/26">
+  debugger
+  var z = Number(prompt(''))//几个数字
+  var s = 0
+  for (var i = 0; i < z; i++) {
+    var L = Number(prompt(''))//数字填写
+    var A = L % 10//个位数
+    var B = ((L - A) % 100) / 10   //十位数
+    var C = (L - A - 10 * B) % 1000 / 100 //百位数
+    var D = Math.trunc(L / 1000)
+    if (A - D - C - B > 0) {
+      s = s + 1
+    }
+  }
+  console.log(s)
+</script>
+<script type="xxx" id="ch0105/27">
+  var K = Number(prompt())
+  var n = 0
+  var Sn = 0
+  do {
+    n = n + 1
+    Sn = Sn + 1 / n
+  } while (Sn <= K)
+  console.log(n)
+</script>
+<script type="xxx" id="ch0105/28">
+  var n = Number(prompt())
+
+  while (n > 0) {
+    var d = b % 10
+    console.log(d)
+    n = (n - d) / 10
+  }
+</script>
+<script type="xxx" id="ch0105/29">
+  var n = Number(prompt())
+  var A = Math.sign(n)
+
+  while (n > 0) {
+    var d = n % 10
+    n = (n - d) / 10
+    r = r * 10 + d
+  }
+  console.log(r * A)
+</script>
+<script type="xxx" id="ch0105/30">
+  var m = Number(prompt())
+  var k = Number(prompt())
+</script>
+<script type="xxx" id="ch0105/31">
+  var n = Number(prompt())
+  var m = Number(prompt())
+  var light = ''
+  var isFirst = true
+  for (var i = 1; i <= n; i++) {
+    var light = true
+    for (var j = 1; j <= m; j++) {
+      if (i % j == 0) {
+        light = !light
+      }
+      if (!light) {
+        if (isFrst) {
+          light += i
+        } else {
+          lights += ',' + i
+        }
+      }
+      isFirst = false
+    }
+  } console.log(lights)
+</script>
+<script type="xxx" id="ch0105/32">
+  var n = Number(prompt())
+  var sun = 0
+  var p = 1
+  var q = 2
+  for (var i = 0; i < n; i++) {
+    sum += p / q
+    var t = p + q
+    q = p + q
+    p = q - p
+  }
+  console.log(sum.toFixed(4))
+</script>
+<script type="xxx" id="ch0105/33">
+  var n = Number(prompt())
+  var sum
+  var sign = 1
+  for (var i = 1; i <= n; i++) {
+    sum += sign * 1 / i
+    sign=-sign
+  }console.log(sum.toFixed(4))
+</script>
+<script type="xxx" id="ch0105/34">
+  var n = Number(prompt())
+  var sum = 0
+  var f = 1
+  for (var i = 1; i <= n; i++) {
+    f *= i
+    sum += f
+  }
+  console.log(sum)
+</script>
+var
+<script type="xxx" id="ch0105/35">
+  var n = Number(prompt())
+  var f = 1
+  var sum = 0
+  for (var i = 1; i <= n; i++) {
+    f *= i
+    sum += f
+  } console.log(sum)
+</script>
+<script type="xxx" id="ch0105/36">
+  var x = Number(prompt())
+  var n = Number(prompt())
+  var v = 1
+  var sum = 0
+  for (var i = 1; i <= n; i++) {
+    sum += v
+    v *= x
+  } console.log(sum.toFixed(4))
+</script>
+<script type="xxx" id="ch0105/37">
+</script>
+<script type="xxx" id="ch0105/38">
+  var m = Number(prompt())
+  for (vari = 0; i <= m; i++) {
+    var n = Number(prompt())
+    if (n == 0) {
+      console.log(0)
+    } else {
+      for (var j = n; j >= 0; j--) {
+        var c = Number(prompt())
+        console.log(c * j)
+      }
+    }
+  }
+</script>
+<script type="xxx" id="ch0105/39">
+  var n = Number(prompt())
+  for (var i = i; i <= n; i++) {
+    var A = false
+    if (i % t == 00) {
+      A = true
+    } else {
+      while (i > 0) {
+        var d = i % 10
+        if (d == 7) {
+          A = true
+          break
+        }
+        i = (i - d) / 10
+      }
+    }
+    if (!A) {
+      sum += i * i
+    }
+  }
+  console.log(sum)
+</script>
+<script type="xxx" id="ch0105/40">
+  var n = Number(prompt())
+  var count = 0
+  for (var i = 1; i <= n; i++) {
+    var m = i
+    while (m > 0) {
+      var d = m % 10
+      if (d === 1) {
+        count++
+      }
+      m = (m - d) % 10
+    }
+  }
+  console.log(count)
+</script>
+<script type="xxx" id="ch0105/41">
+  var n = Number(prompt())
+  var p = Nuber(prompt())
+  var count = 0
+  for (var i = n; i <= p; i++) {
+    var m = 1
+    while (m > 0) {
+      var d = m % 10
+      if (d === 2) {
+        count++
+      }
+      m = (m - d) / 10
+    }
+  }
+  console.log(count)
+</script>
+<script type="xxx" id="ch0105/42">
+  var h = Number(prompt())
+  var w = Nuber(prompt())
+  var char = prompt()
+  var fill = Number(prompt())
+  for (var i = n; i <= p; i++) {
+    var m = 1
+    while (m > 0) {
+      var d = m % 10
+      if (d === 2) {
+        count++
+      }
+      m = (m - d) / 10
+    }
+  }
+  console.log(count)
+</script>
+<script type="xxx" id="ch0105/43">
+  var n = Number(prompt())
+  for (var i = 2; ; i++) {
+    if (n % i == 0) {
+      console.log(n / i)
+      break
+    }
+  }
+</script>
+<script type="xxx" id="ch0105/44">
+  var n = Number(prompt())
+  for (var i = 2; ; i++) {
+    var A = true
+    for (var j = 2; j <= Math.sqrt(i); i++) {
+      if (i % j == 0) {
+        A = false
+        break
+      }
+    }
+    if (A) {
+      count++
+      if (count == 0) {
+        console.log(i)
+        break
+      }
+    }
+  }
+</script>
+<script type="xxx" id="ch0105/45">
+  var n = Number(prompt())
+  var sum = 1
+  var A = 1//面额
+  var b = 1//天数
+  var c = 1//当前
+  for (var i = 1; i <= n; i++) {
+    sum += A
+    c++
+    if (c == b) {
+      A++
+      b++
+      c = 0
+    }
+  }
+  console.log(sum)
+</script>
