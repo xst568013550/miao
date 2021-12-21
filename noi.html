@@ -926,12 +926,13 @@ alert(V)
 var
 <script type="xxx" id="ch0105/35">
   var n = Number(prompt())
-  var f = 1
   var sum = 0
+  var f = 1
   for (var i = 1; i <= n; i++) {
-    sum += 1 / f
     f *= i
-  } console.log(sum)
+    sum += 1 / f
+  }
+  console.log(sum)
 </script>
 <script type="xxx" id="ch0105/36">
   var x = Number(prompt())
@@ -944,39 +945,66 @@ var
   }
   console.log(sum.toFixed(2))
 </script>
+
 <script type="xxx" id="ch0105/37">
+  var M = parseInt(prompt())
+  var N = parseInt(prompt())
+  var X = parseInt(prompt())
+  var 体力 = 0
+
+  for ( ; X > 0; X--) {
+    体力 += N
+    if (体力 >= M) {
+      var n = 0
+      for (var m = M ; m > 0; m--) {
+        n++
+        if (n == N) {
+          N++
+          n = 0
+        }
+      }
+      体力 = 0
+    }
+  }
+
+  console.log(N)
 </script>
 <script type="xxx" id="ch0105/38">
+  debugger
   var m = Number(prompt())
-  for (vari = 0; i <= m; i++) {
+
+  for (var i = 0; i <= m; i++) {
     var n = Number(prompt())
     if (n == 0) {
-      console.log(0)
+      console.log('0')
     } else {
-      for (var j = n; j > 0; j--) {
+      for (var j = n; j >= 0; j--) {
         var c = Number(prompt())
+        if (j !== 0) {
         console.log(c * j)
+        }
       }
     }
   }
 </script>
 <script type="xxx" id="ch0105/39">
   var n = Number(prompt())
-  for (var i = i; i <= n; i++) {
-    var A = false
-    if (i % t == 00) {
-      A = true
+    var sum = 0
+    for (var i = 1; i <= n; i++) {
+      var YES = false
+      if (i % 7 == 0) {
+        YES = true
     } else {
-      while (i > 0) {
+      var m = i
+      while (m > 0) {
         var d = i % 10
         if (d == 7) {
-          A = true
-          break
+          YES = true
         }
-        i = (i - d) / 10
+        m = (m - d) / 10
       }
     }
-    if (!A) {
+      if (!YES) {
       sum += i * i
     }
   }
@@ -984,7 +1012,8 @@ var
 </script>
 <script type="xxx" id="ch0105/40">
   var n = Number(prompt())
-  var count = 0
+  var count = 0//计数器
+
   for (var i = 1; i <= n; i++) {
     var m = i
     while (m > 0) {
@@ -992,7 +1021,7 @@ var
       if (d === 1) {
         count++
       }
-      m = (m - d) % 10
+      m = (m - d) / 10
     }
   }
   console.log(count)
@@ -1013,27 +1042,31 @@ var
   }
   console.log(count)
 </script>
-<script type="xxx" id="ch0105/42">
+<script type="XXX" id="ch0105/42">
+
   var h = Number(prompt())//高
-  var w = Nuber(prompt())//宽
+  var w = Number(prompt())//宽
   var char = prompt()//符号
   var fill = Number(prompt())//是否空心
-  var x
-  var y
+  var x = ''
+  var y = ''
   for (var i = 1; i <= w; i++) {
     if (i <= w) {
-      x = x + char
-      console.log(char)
+      x = x + char//字符行
     }
     if (i > 2) {
-      var y
-      y = y + ' '
+      var y = y + ' '//空心行
+      var z = char + y + char
     }
     }
-    for (i = 1) {
+    for (j = 1; j <= h; j++) {
+    if ((j == 1 || j == h) && fill == 1) {
+      console.log(x)
+    } else if (j > 1 || j < h) {
+      console.log(z)
+    }
+  }
 
-    }
-  console.log(count)
 </script>
 <script type="xxx" id="ch0105/43">
   var n = Number(prompt())
