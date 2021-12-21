@@ -800,18 +800,18 @@ alert(V)
   }
   console.log(k)
 </script>
-<script type="xxx" id="ch0105/25">
-  for (var i = 49; i <= 7; i++) {
-    var a7 = i % 7
-    var b7 = (i - a7) / 7 % 7
-    var c7 = (i - a7 - b7 * 7) / 7 / 7 % 7
-
-    var a9 = i % 9
-    var b9 = (i - a9) / 9 % 9
-    var c9 = (i - a9 - b7 * 9) / 9 / 9 % 9
-    if (a7 == c9 && b7 == b9 && c7 == a9) {
-      console.log(i, '' + c7 + b7 + a7, '' + c9 + b9 + c9)
-      break
+<script type="XXX" id="ch0105/25">
+  for (let i = 0; i <= 728; i++) {
+    let A = i.toString(7);
+    let B = i.toString(9);
+    if (
+      A.length == 3 &&
+      B.length == 3 &&
+      A.split("").reverse().join("") == B
+    ) {
+      console.log(i);
+      console.log(i.toString(7));
+      console.log(i.toString(9));
     }
   }
 </script>
@@ -842,14 +842,17 @@ alert(V)
   console.log(n)
 </script>
 <script type="xxx" id="ch0105/28">
-  var n = Number(prompt())
+  var n = Number(prompt("n: "))
+  var a
 
-  while (n > 0) {
-    var d = b % 10
-    console.log(d)
-    n = (n - d) / 10
+  while ((Math.trunc(n / 10)) > 0) {
+    a = n % 10
+    n = Math.trunc(n / 10)
+    console.log(a)
   }
+  console.log(n)
 </script>
+
 <script type="xxx" id="ch0105/29">
   var n = Number(prompt())
   var A = Math.sign(n)
@@ -868,7 +871,7 @@ alert(V)
 <script type="xxx" id="ch0105/31">
   var n = Number(prompt())
   var m = Number(prompt())
-  var light = ''
+    var lights = ''
   var isFirst = true
   for (var i = 1; i <= n; i++) {
     var light = true
@@ -876,12 +879,12 @@ alert(V)
       if (i % j == 0) {
         light = !light
       }
-      if (!light) {
-        if (isFrst) {
-          light += i
+    }
+    if (!light) {
+      if (isFirst) {
+        lights += i
         } else {
           lights += ',' + i
-        }
       }
       isFirst = false
     }
@@ -893,21 +896,22 @@ alert(V)
   var p = 1
   var q = 2
   for (var i = 0; i < n; i++) {
-    sum += p / q
+    sum += q / p
     var t = p + q
-    q = p + q
-    p = q - p
+    p = q
+    q = t
   }
   console.log(sum.toFixed(4))
 </script>
 <script type="xxx" id="ch0105/33">
   var n = Number(prompt())
-  var sum
+  var sum = 0
   var sign = 1
   for (var i = 1; i <= n; i++) {
     sum += sign * 1 / i
-    sign=-sign
-  }console.log(sum.toFixed(4))
+    sign = -sign
+  }
+  console.log(sum.toFixed(4))
 </script>
 <script type="xxx" id="ch0105/34">
   var n = Number(prompt())
@@ -925,8 +929,8 @@ var
   var f = 1
   var sum = 0
   for (var i = 1; i <= n; i++) {
+    sum += 1 / f
     f *= i
-    sum += f
   } console.log(sum)
 </script>
 <script type="xxx" id="ch0105/36">
@@ -934,10 +938,11 @@ var
   var n = Number(prompt())
   var v = 1
   var sum = 0
-  for (var i = 1; i <= n; i++) {
+  for (var i = 0; i <= n; i++) {
     sum += v
-    v *= x
-  } console.log(sum.toFixed(4))
+    v = v * x
+  }
+  console.log(sum.toFixed(2))
 </script>
 <script type="xxx" id="ch0105/37">
 </script>
@@ -948,7 +953,7 @@ var
     if (n == 0) {
       console.log(0)
     } else {
-      for (var j = n; j >= 0; j--) {
+      for (var j = n; j > 0; j--) {
         var c = Number(prompt())
         console.log(c * j)
       }
@@ -1009,20 +1014,25 @@ var
   console.log(count)
 </script>
 <script type="xxx" id="ch0105/42">
-  var h = Number(prompt())
-  var w = Nuber(prompt())
-  var char = prompt()
-  var fill = Number(prompt())
-  for (var i = n; i <= p; i++) {
-    var m = 1
-    while (m > 0) {
-      var d = m % 10
-      if (d === 2) {
-        count++
-      }
-      m = (m - d) / 10
+  var h = Number(prompt())//高
+  var w = Nuber(prompt())//宽
+  var char = prompt()//符号
+  var fill = Number(prompt())//是否空心
+  var x
+  var y
+  for (var i = 1; i <= w; i++) {
+    if (i <= w) {
+      x = x + char
+      console.log(char)
     }
-  }
+    if (i > 2) {
+      var y
+      y = y + ' '
+    }
+    }
+    for (i = 1) {
+
+    }
   console.log(count)
 </script>
 <script type="xxx" id="ch0105/43">
@@ -1070,3 +1080,27 @@ var
   }
   console.log(sum)
 </script>
+<!-- <script>
+  function isPrime(n) {
+    for (var i = 2; i * i <= n; i++) {
+      if (n % i == 0) {
+        return false
+      }
+    }
+    return true
+  }
+</script> -->
+<!-- <script>
+  function isPrime(n) {
+    for (var i = 1; i <= n; i++) {
+      if (n % 7 == 0) {
+        return true
+      } while (n > 0) {
+        var A = n % 7
+        if (A == 7) {
+          return true
+        }
+      }
+    }
+  }
+</script> -->
