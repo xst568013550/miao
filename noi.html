@@ -612,19 +612,14 @@ alert(V)
   }
   console.log(sum)
 </script>
+
 <script type="xxx" id="ch0105/14">
-  debugger
-  var n = Number(prompt('n'))
-  var m = Number(prompt('m'))
-  var i = 0  //计数器
-  var sum
-  var sum2 = 1
-  while (i < m) {
-    i = i + 1
-    sum = sum * (1 + 0.001)
+  var X = Number(prompt("X:"));
+  var n = Number(prompt("n:"));
+  for (let i = 0; i < n; i++) {
+      X = X * 1.001
   }
-  sum2 =((m * sum).toFixed(4))
-  console.log(sum2)
+  console.log(X.toFixed(4))
 </script>
 <script type="xxx" id="ch0105/15">
   var R = Number(prompt())
@@ -1012,24 +1007,29 @@ var
 
   console.log(N)
 </script>
-<script type="xxx" id="ch0105/38">
-  var k = Number(prompt('几组多项式？'))
-  var sum = '' //字符串加数字会转为字符串，做到拼接
-  for (K = 1 ; K <= k ; K ++){
-    var n = Number(prompt('NO.' + K + '最高次幂'))
-    for (i = n ; i >= 0 ; i --){
-      var c = Number(prompt('C.' + i))
-      if (i == n){
-        sum += c * i
-      }else if (i !== 0){
-        sum += ' ' + c * i
+<script type="xx" id="ch0105/38">
+
+  var group = Number(prompt('group'))
+
+  for (; group > 0; group--) {
+    var n = Number(prompt('n'))
+    var result
+    if (n == 0) {
+      prompt('C')
+      result = 0
+    }
+    else {
+      for (var i = n; i >= 0; i--) {
+      var C = Number(prompt('C'))
+        if (i < n && i > 0)
+          result = result + " " + (i * C)
+        else if (i == n)
+          result = C * i
       }
     }
-    if(K !== k){
-      sum += '\n'
-    }
+    console.log(result)
   }
-  alert(sum)
+
 </script>
 <script type="xxx" id="ch0105/39">
   var n = Number(prompt())
@@ -1071,20 +1071,23 @@ var
   console.log(count)
 </script>
 <script type="xxx" id="ch0105/41">
-  var n = Number(prompt())
-  var p = Nuber(prompt())
-  var count = 0
-  for (var i = n; i <= p; i++) {
-    var m = 1
-    while (m > 0) {
-      var d = m % 10
-      if (d === 2) {
-        count++
+  var L = Number(prompt('L'))
+  var R = Number(prompt('R'))
+  var sum = 0
+  for (k = L ; k <= R ; k ++){
+    for(i = 1 ; ; i ++){
+      if (k < 10**i){
+        break
       }
-      m = (m - d) / 10
+    }
+    for (m = 0 ; m < i ; m ++){
+      var ing = Math.trunc(k / (10**m)) % 10
+      if (ing == 2){
+        sum += 1
+      }
     }
   }
-  console.log(count)
+  alert(sum)
 </script>
 <script type="XXX" id="ch0105/42">
   var h = Number(prompt())//高
