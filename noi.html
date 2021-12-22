@@ -466,7 +466,7 @@ alert(V)
   console.log(average)
 </script>
 
-<script type="xxx" id="ch0105/04">
+<script type="x" id="ch0105/04">
   var n = Number(prompt('人数'))
   var x = 0 //变量
   var sum = 0 //数据总和
@@ -477,7 +477,7 @@ alert(V)
   }
   var average = sum / n
   average = average.toFixed(5)
-  console.log(sun + average)
+    console.log(sum + ' ' + average)
 </script>
 <script type="xxx" id="ch0105/05">
   debugger
@@ -613,6 +613,7 @@ alert(V)
   console.log(sum)
 </script>
 <script type="xxx" id="ch0105/14">
+  debugger
   var n = Number(prompt('n'))
   var m = Number(prompt('m'))
   var i = 0  //计数器
@@ -620,10 +621,10 @@ alert(V)
   var sum2 = 1
   while (i < m) {
     i = i + 1
-    sum2 = sum * (1 + 0.001)
+    sum = sum * (1 + 0.001)
   }
-  sum =((m * sum2).toFixed(4))
-  console.log(sum)
+  sum2 =((m * sum).toFixed(4))
+  console.log(sum2)
 </script>
 <script type="xxx" id="ch0105/15">
   var R = Number(prompt())
@@ -854,20 +855,53 @@ alert(V)
 </script>
 
 <script type="xxx" id="ch0105/29">
-  var n = Number(prompt())
-  var A = Math.sign(n)
-
-  while (n > 0) {
-    var d = n % 10
-    n = (n - d) / 10
-    r = r * 10 + d
+  var n = Number(prompt('n'))
+  var result = 0
+  var a = 0
+  if (n > 0 && n !== 0 ) {
+    for (i = 0 ; n !== 0; i++) {
+      a = n % 10
+      result= result * 10 + a
+      n = ( n - a) / 10
+    }
+    console.log(result);
+  } else if(n < 0) {
+    n = -1 * n
+    for (i = 0 ; n !== 0; i++) {
+      a = n % 10
+      result= result * 10 + a
+      n = (n - a) / 10
+    }
+    console.log(-result);
+  } else {
+    console.log(0);
   }
-  console.log(r * A)
 </script>
+
 <script type="xxx" id="ch0105/30">
-  var m = Number(prompt())
-  var k = Number(prompt())
+  var m = Number(prompt('m'))
+  var k = Number(prompt('k'))
+  var counter = 0
+  var num = 0
+  if (m % 19 == 0) {
+    for (i = 0; m !== 0 ; i++) {
+      num = m % 10
+      if(num == k) {
+        counter = counter + 1
+      }
+      m = Math.trunc(m / 10)
+    }
+    if (counter == k) {
+      console.log("YES");
+    } else {
+      console.log("NO");
+    }
+  } else {
+    console.log("NO");
+  }
+
 </script>
+
 <script type="xxx" id="ch0105/31">
   var n = Number(prompt())
   var m = Number(prompt())
@@ -892,16 +926,15 @@ alert(V)
 </script>
 <script type="xxx" id="ch0105/32">
   var n = Number(prompt())
-  var sun = 0
+  var sum = 0
   var p = 1
-  var q = 2
-  for (var i = 0; i < n; i++) {
-    sum += q / p
-    var t = p + q
-    p = q
-    q = t
+  var q = 1
+  for (i = 0; i < n; i++) {
+    q = q + p
+    p = q - p
+    sum = sum + q / p
   }
-  console.log(sum.toFixed(4))
+  console.log(sum.toFixed(4));
 </script>
 <script type="xxx" id="ch0105/33">
   var n = Number(prompt())
@@ -926,13 +959,23 @@ alert(V)
 var
 <script type="xxx" id="ch0105/35">
   var n = Number(prompt())
-  var sum = 0
+  var sum = 1
   var f = 1
   for (var i = 1; i <= n; i++) {
-    f *= i
-    sum += 1 / f
+    f = i * f
+    sum = sum + 1 / f
   }
-  console.log(sum)
+  console.log(sum.toFixed(10))
+</script>
+<script type="xxx" id="ch0105/35">
+  var n = Number(prompt('n'))
+ var sum = 1
+ var factorial =  1
+ for (var i = 1; i <= n; i++) {
+   factorial = i * factorial //当次阶乘结果
+   sum = sum + 1 /factorial  // 前i次阶乘倒数求和
+ }
+ console.log(sum.toFixed(10));
 </script>
 <script type="xxx" id="ch0105/36">
   var x = Number(prompt())
@@ -970,22 +1013,23 @@ var
   console.log(N)
 </script>
 <script type="xxx" id="ch0105/38">
-  debugger
-  var m = Number(prompt())
-
-  for (var i = 0; i <= m; i++) {
-    var n = Number(prompt())
-    if (n == 0) {
-      console.log('0')
-    } else {
-      for (var j = n; j >= 0; j--) {
-        var c = Number(prompt())
-        if (j !== 0) {
-        console.log(c * j)
-        }
+  var k = Number(prompt('几组多项式？'))
+  var sum = '' //字符串加数字会转为字符串，做到拼接
+  for (K = 1 ; K <= k ; K ++){
+    var n = Number(prompt('NO.' + K + '最高次幂'))
+    for (i = n ; i >= 0 ; i --){
+      var c = Number(prompt('C.' + i))
+      if (i == n){
+        sum += c * i
+      }else if (i !== 0){
+        sum += ' ' + c * i
       }
     }
+    if(K !== k){
+      sum += '\n'
+    }
   }
+  alert(sum)
 </script>
 <script type="xxx" id="ch0105/39">
   var n = Number(prompt())
@@ -1043,7 +1087,6 @@ var
   console.log(count)
 </script>
 <script type="XXX" id="ch0105/42">
-
   var h = Number(prompt())//高
   var w = Number(prompt())//宽
   var char = prompt()//符号
@@ -1137,3 +1180,39 @@ var
     }
   }
 </script> -->
+<script type="xxx">
+  function A(n) {
+    var A = 0
+    while (n > 0) {
+      var Z = n % 10
+      A++
+      m = (m - Z) / 10
+    }
+  }
+  m = n
+  while (n > 0) {
+    var A = m % 10
+    sum += Math.pow(Z, A)
+    m = (m - Z) / 10
+  }
+  if (sum == n) {
+    return true
+  } else {
+    return false
+  }
+</script>
+<script type="第一种办法">
+  function A(n) {
+  var left = 0
+  var right = n
+  do{
+    var mid = (left + right) / 2
+    if(mid * mid < n){
+      left = mid
+    }else if (mid * mid > n){
+      right = mid
+    }else {
+      return mid
+    }
+  }while(Math.abs(mid * mid - n)>0.0000001)
+</script>
