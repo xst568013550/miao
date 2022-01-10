@@ -51,7 +51,7 @@ var xst56813550 = function () {
 
 
 
-  function flatten(array) {                       //5
+  function flatten(array) {                       //5   不一定对
     let a = []
     for (i = 0; i < array.length; i++) {
       a.push(array[i])
@@ -59,12 +59,47 @@ var xst56813550 = function () {
     return a
   }
 
+
+
+  function flattenDeep(array, wa = []) {                  //6  不会
+
+    for (i = 0; i < array.length; i++) {
+      if (!Array.isArray(array[i]), wa.push(array[i])) {
+
+      } else flattenDeep(array, wa)
+    }
+    return wa
+  }
+
+
+
+
+  function max(array) {                                  //7
+    if (array.length == 0) {
+      return undefined
+    }
+    let b = 0
+    for (i = 0; i < array.length; i++) {
+      if (b < array[i]) {
+        b = array[i]
+      }
+    }
+    return b
+  }
+
+
+
+
+  function maxBy()
+
+
   return {
     chunck: chunck,
     compact: compact,
     drop: drop,
     dropRight: dropRight,
     flatten: flatten,
+    max: max,
   }
 }()
 
