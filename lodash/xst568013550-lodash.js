@@ -2,7 +2,7 @@
 // }()
 
 var xst56813550 = function () {
-  function chunck(array, size = 1) {//1
+  function chunck(array, size = 1) {              //1
     let A = []                                    //要push进的外数组
     for (let i = 0; i < array.length; i += size) {//每次行动的都是size的值来计算，从下标0开始计算
       let nei = []                                //要push进的内数组
@@ -13,11 +13,11 @@ var xst56813550 = function () {
       A.push(nei)                                 //将内数组push进外数组
     }
     return A                                      //输出外数组
-  },
+  }
 
 
 
-  function compact(array) {//2
+  function compact(array) {                       //2
     let A = []                                    //创建一个数组
     for (i = 0; i < array.length; i++) {          //从前往后，第0项开始循环
       if (array[i] > 0) {                         //array数组的i项循环大于0就push进数组
@@ -27,10 +27,26 @@ var xst56813550 = function () {
     return A                                      //输出数组
   }
 
-}
-return {
-  chunck: chunck,
-  compact: compact,
+
+
+  function drop(array, n) {                       //3
+    let A = []                                    //创建一个空数组
+    for (let i = 0; i < array.length; i++) {      //从前往后，第0项开始循环
+      if (array[i] >= n) {                        //筛选条件
+        A.push(array[i])                          //push进空数组
+      }
+    }
+    return A                                      //输出数组
+  }
+
+
+
+
+  return {
+    chunck: chunck,
+    compact: compact,
+    drop: drop
+  }
 }()
 
 
