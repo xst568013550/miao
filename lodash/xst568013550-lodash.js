@@ -1,8 +1,7 @@
-// var xst56813550 = function () {
-// }()
 
-var xst56813550 = function () {
-  function chunck(array, size = 1) {              //1
+
+var xst56813550 = {
+  chunck: function (array, size = 1) {              //1
     let A = []                                    //要push进的外数组
     for (let i = 0; i < array.length; i += size) {//每次行动的都是size的值来计算，从下标0开始计算
       let nei = []                                //要push进的内数组
@@ -13,11 +12,11 @@ var xst56813550 = function () {
       A.push(nei)                                 //将内数组push进外数组
     }
     return A                                      //输出外数组
-  }
+  },
 
 
 
-  function compact(array) {                       //2
+  compact: function (array) {                       //2
     let A = []                                    //创建一个数组
     for (i = 0; i < array.length; i++) {          //从前往后，第0项开始循环
       if (array[i] > 0) {                         //array数组的i项循环大于0就push进数组
@@ -25,11 +24,11 @@ var xst56813550 = function () {
       }
     }
     return A                                      //输出数组
-  }
+  },
 
 
 
-  function drop(array, n = 1) {                       //3
+  drop: function (array, n = 1) {                       //3
     let A = []                                    //创建一个空数组
     for (let i = 0; i < array.length; i++) {      //从前往后，第0项开始循环
       if (array[i] > n) {                        //筛选条件
@@ -37,31 +36,31 @@ var xst56813550 = function () {
       }
     }
     return A                                      //输出数组
-  }
+  },
 
 
 
-  function dropRight(array, n = 1) {              //4
+  dropRight: function (array, n = 1) {              //4
     let A = []                                    //创建一个空数组
     for (let i = 0; i < array.length - n; i++) {  //从前往后，第0项开始循环
       A.push(array[i])                            //push进空数组
     }
     return A                                      //输出数组
-  }
+  },
 
 
 
-  function flatten(array) {                       //5   不一定对
+  flatten: function (array) {                       //5   不一定对
     let a = []
     for (i = 0; i < array.length; i++) {
       a.push(array[i])
     }
     return a
-  }
+  },
 
 
 
-  function flattenDeep(array, wa = []) {                  //6  不会
+  flattenDeep: function (array, wa = []) {                  //6  不会
 
     for (i = 0; i < array.length; i++) {
       if (!Array.isArray(array[i]), wa.push(array[i])) {
@@ -69,12 +68,12 @@ var xst56813550 = function () {
       } else flattenDeep(array, wa)
     }
     return wa
-  }
+  },
 
 
 
 
-  function max(array) {                                  //7
+  max: function (array) {                                  //7
     if (array.length == 0) {
       return undefined
     }
@@ -85,23 +84,13 @@ var xst56813550 = function () {
       }
     }
     return b
-  }
+  },
 
 
 
 
-  function maxBy()
 
-
-  return {
-    chunck: chunck,
-    compact: compact,
-    drop: drop,
-    dropRight: dropRight,
-    flatten: flatten,
-    max: max,
-  }
-}()
+}
 
 
 
