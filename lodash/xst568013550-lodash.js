@@ -26,10 +26,13 @@ var xst56813550 = {
       }
     }
     return A                                      //输出数组
-  },
-
+  }
 
 }
+return {
+  chunck: chunck,
+  compact: compact,
+}()
 
 
 
