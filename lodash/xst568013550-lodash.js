@@ -1,7 +1,8 @@
-var xst56813550 = function () {
-}()
+// var xst56813550 = function () {
+// }()
+
 var xst56813550 = {
-  chunck: function (array, size = 1) {
+  chunck: function (array, size = 1) {//1
     let A = []                                    //要push进的外数组
     for (let i = 0; i < array.length; i += size) {//每次行动的都是size的值来计算，从下标0开始计算
       let nei = []                                //要push进的内数组
@@ -17,7 +18,7 @@ var xst56813550 = {
 
 
 
-  compact: function (array) {
+  compact: function (array) {//2
     let A = []                                    //创建一个数组
     for (i = 0; i < array.length; i++) {          //从前往后，第0项开始循环
       if (array[i] > 0) {                         //array数组的i项循环大于0就push进数组
@@ -26,6 +27,7 @@ var xst56813550 = {
     }
     return A                                      //输出数组
   },
+
 
 }
 
