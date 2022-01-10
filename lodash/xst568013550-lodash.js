@@ -1,3 +1,5 @@
+var xst56813550 = function () {
+}()
 var xst56813550 = {
   chunck: function (array, size = 1) {
     let A = []                                    //要push进的外数组
@@ -23,7 +25,8 @@ var xst56813550 = {
       }
     }
     return A                                      //输出数组
-  }
+  },
+
 }
 
 
