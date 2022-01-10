@@ -1204,6 +1204,35 @@ var
     return false
   }
 </script>
+<script type="xxx" id="narcissistic">
+  var n = Number(prompt())
+  function b(n) {
+    var i = 0
+    var sum = 0
+    while (n > 0) {
+      var A = n % 10//个数
+      i++
+      n = (n - A) / 10
+    }
+    m = n
+    while (n > 0) {
+      var A = n % 10//个数
+      sum = Math.pow(A, i)
+      m = (m - A) / 10
+    }
+    if (sum == 0) {
+      return true
+    } else {
+      return false
+    }
+  }
+  if (b(n)) {//要记得输出这个
+    console.log('YES')
+  } else {
+    console.log('NO')
+  }
+</script>
+
 <script type="xxx" id="sqrt">
   function A(n) {
   var left = 0
