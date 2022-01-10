@@ -1,6 +1,4 @@
-
-
-var xst56813550 = {
+var xst568013550 = {
   chunck: function (array, size = 1) {              //1
     let A = []                                    //要push进的外数组
     for (let i = 0; i < array.length; i += size) {//每次行动的都是size的值来计算，从下标0开始计算
@@ -91,6 +89,8 @@ var xst56813550 = {
 
 
 }
+
+
 
 
 
