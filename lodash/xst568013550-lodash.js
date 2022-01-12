@@ -3,7 +3,7 @@ var xst568013550 = {
 
 
 
-  chunck: function (array, size = 1) {              //1
+  chunk: function (array, size = 1) {              //1
     let A = []                                    //要push进的外数组
     for (let i = 0; i < array.length; i += size) {//每次行动的都是size的值来计算，从下标0开始计算
       let nei = []                                //要push进的内数组
@@ -52,10 +52,17 @@ var xst568013550 = {
 
 
 
-  flatten: function (array) {                       //5   不一定对
-    let a = []
+  flatten: function flattens(array) {                       //5
+    let a = []                                     //创建一个空数组
     for (i = 0; i < array.length; i++) {
-      a.push(array[i])
+      if (Array.isArray(array[i])) {               //判断array的第i项是否是一个数组
+        for (let j = 0; j < array[i].length; j++) {//是数组的话进行循环取出数组的项
+          a.push(array[i][j])                      //将array第i项数组的第j项值取出，并push进数组
+        }
+      } else {
+        a.push(array[i])                           //不是数组将直接push进数组
+      }
+
     }
     return a
   },
@@ -90,15 +97,19 @@ var xst568013550 = {
 
 
 
-  sum: function (array) {
-    let Sum = 0
-    for (i = 0; i = array.length; i++) {
-      Sum = Sum + array[i]
+  sum: function f(array) {
+    let A = 0
+    for (i = 0; i < array.length; i++) {
+      A = A + array[i]
     }
-    return Sum
-  }
+    return A
+  },
+
+
+
 
 }
+
 
 
 
