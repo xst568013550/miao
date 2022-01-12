@@ -1,19 +1,23 @@
 var xst568013550 = {
 
 
-
-
   chunk: function (array, size = 1) {              //1
-    let A = []                                    //要push进的外数组
-    for (let i = 0; i < array.length; i += size) {//每次行动的都是size的值来计算，从下标0开始计算
-      let nei = []                                //要push进的内数组
-      let mins = Math.min(i + size, array.length)  //循环的次数 +size的值和数组的厂区，取小
-      for (let j = i; j > mins; j++) {             //j的值=i的值 当j小于i+size或数组长度的时候，j++
-        nei.push(array.j)                         //将数组push进内数组
-      }
-      A.push(nei)                                 //将内数组push进外数组
+    if (array.length == 0) {
+      return array
     }
-    return A                                      //输出外数组
+    let sum = 0
+    let wai = []
+    let nei = []                              //要push进的外数组
+    for (let i = 0; i < array.length; i += size) {//每次行动的都是size的值来计算，从下标0开始计算                         //要push进的内数组
+      nei.push(array[i])
+      sum++
+      if (sum == size || i == array.length - 1) {//当计数器=size的值的时候或者i的值==数组下标的时候，将内部的数组的值push进外部数组，然后将数组清空，计数器也清空
+        wai.push(nei)
+        nei = []
+        sum = 0
+      }
+    }
+    return wai                                 //输出外数组
   },
 
 
@@ -69,14 +73,20 @@ var xst568013550 = {
 
 
 
-  flattenDeep: function (array, wa = []) {                  //6  不会
-
+  flattenDeep: function (array) {                  //6  不会
+    let a = []                                     //创建一个空数组
     for (i = 0; i < array.length; i++) {
-      if (!Array.isArray(array[i]), wa.push(array[i])) {
-
-      } else flattenDeep(array, wa)
+      var item = array[i]                      //array[i]的值给item
+      if (Array.isArray(item)) {               //判断array的第i项是否是一个数组
+        item = flattenDeep(item)               //让每一次循环的item代替上一个循环的自己(递进)
+        for (let j = 0; j < item.length; j++) {//是数组的话进行循环取出数组的项
+          a.push(item[j])                      //将array第i项数组的第j项值取出，并push进数组
+        }
+      } else {
+        a.push(item)                           //不是数组将直接push进数组
+      }
     }
-    return wa
+    return a
   },
 
 

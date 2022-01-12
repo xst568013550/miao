@@ -1,0 +1,18 @@
+<script>
+  debugger
+  function flattenDeep(array, wa = []) {                  //6  不会
+    let a = []                                     //创建一个空数组
+    for (i = 0; i < array.length; i++) {
+      var item = array[i]
+      if (Array.isArray(item)) {               //判断array的第i项是否是一个数组
+        item = flattenDeep(item)
+        for (let j = 0; j < item.length; j++) {//是数组的话进行循环取出数组的项
+          a.push(item[j])                      //将array第i项数组的第j项值取出，并push进数组
+        }
+      } else {
+        a.push(item)                           //不是数组将直接push进数组
+      }
+    }
+    return a
+  }
+</script>
