@@ -1,0 +1,53 @@
+<script>
+  function keyBy(array, propName) {
+    let obj = {}
+    for (i = 0; i < array.length; i++) {
+      obj = obj[array[i][propName]]
+    }
+    return obj
+  }//reduce逻辑
+
+  function keyBy(array, propName) {
+    return array.reduce((obj, item) => {
+      obj[item[propName]] = item
+      return obj
+    }, {})
+
+
+
+    {
+      born: 1801
+      died: 1834
+      father: "Jan Frans van br "
+    }
+  }
+
+
+
+  //计算某个人有多少基因来自父母
+  //先得到其父母分别有多少基因来自Pvh，如果求和除以2
+  //如果这个人是就是PvH本人，则直接返回1
+  //如果这个人在数据集里不存在，直接返回0
+  function gane(name) {
+
+  }
+
+
+
+  //把函数的前若干个参数固定为fixedargs
+  function bind(f, ...fixedArgs) {
+    return function (...args) {
+      return f(...fixedArgs, ...args)
+    }
+  }
+
+
+
+
+
+  function quicksort(ary) {
+    for (i = 0; i = ary.length; i++) {
+      if (array[i] =)
+    }
+  }
+</script>
