@@ -1,7 +1,7 @@
 var xst568013550 = {
 
 
-  chunk: function (array, size = 1) {              //1
+  chunk: function chunk(array, size = 1) {              //1
     if (array.length == 0) {
       return array
     }
@@ -73,13 +73,13 @@ var xst568013550 = {
 
 
 
-  flattenDeep: function (array) {                  //6  不会
+  flattenDeep: function lattenDeep(array) {                  //6
     let a = []                                     //创建一个空数组
     for (i = 0; i < array.length; i++) {
-      var item = array[i]                      //array[i]的值给item
+      let item = array[i]                      //array[i]的值给item
       if (Array.isArray(item)) {               //判断array的第i项是否是一个数组
         item = flattenDeep(item)               //让每一次循环的item代替上一个循环的自己(递进)
-        for (let j = 0; j < item.length; j++) {//是数组的话进行循环取出数组的项
+        for (j = 0; j < item.length; j++) {//是数组的话进行循环取出数组的项
           a.push(item[j])                      //将array第i项数组的第j项值取出，并push进数组
         }
       } else {
