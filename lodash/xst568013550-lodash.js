@@ -5,15 +5,13 @@ var xst568013550 = {
     let wai = []
     let nei = []
     let sum = 0                             //要push进的外数组
-    for (let i = 0; i < array.length; i++) {//每次行动的都是size的值来计算，从下标0开始计算                         //要push进的内数组
+    for (var i = 0; i < array.length; i++) {//每次行动的都是size的值来计算，从下标0开始计算                         //要push进的内数组
       nei.push(array[i])
       sum++
-      if (sum == size) {//当计数器=size的值的时候或者i的值==数组下标的时候，将内部的数组的值push进外部数组，然后将数组清空，计数器也清空
+      if (sum == size || i == array.length - 1) {//当计数器=size的值的时候或者i的值==数组下标的时候，将内部的数组的值push进外部数组，然后将数组清空，计数器也清空
         wai.push(nei)
         nei = []
         sum = 0
-      } else (array.length != 0); {
-        wai.push(nei)
       }
     }
     return wai                                 //输出外数组
