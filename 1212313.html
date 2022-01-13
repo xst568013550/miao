@@ -1,0 +1,674 @@
+<script>
+  var node = {
+    val: 2,
+    next: null
+  }
+  //链表节点 串起来返回第一个节点(1)
+  function arrayToList(array) {
+    if (array.length == 0) {//因为长度为0
+      return null//所以是空，要返回为空
+    }
+    var list = []//创建一个数组
+    for (i = 0; i < array.lenth; i++) {//对于数组的每一个值，创建一个链表节点
+      var node = {
+        val: array[i],
+        next: null
+      }
+      list.push(node)//push到新数组
+    }
+    for (var i = 0; i < list.length; i++) {
+      list[i].next = list[i + 1]
+      //把每个节点的next指向其后续节点
+    }
+    return list[0]
+  }
+
+
+
+  //链表节点 串起来返回第一个节点(2)
+  function arrayToList2(array) {
+    var dummy = {//创建一个节点
+      val: 0,
+      next: null,
+    }
+    var prev = dummy//将dummy节点  = prev
+    for (var i = 0; i < array.length; i++) {
+      var node = {//创建一个节点
+        val: array[i],
+        next: null
+      }
+      prev.next = node//前一个节点的next一定等于node节点的
+      prev = node
+    }
+    return dummy.next
+  }
+
+
+  //将数组array从start开始到结束转为链表(递归)
+  function arrayToListR(array, start = 0) {
+    if (start == array.length) {
+      return null
+    }
+    var head = {//用第一个元素创建出第一个节点
+      val = array[start],
+      next: null
+    }
+    var tail = arrayToListR(array.slice(1))//递归
+    //用剩下的元素，创建出新的数组的头节点
+    head.next = tail//第一个节点的next=第二个节点
+    return head//返回第一个节点
+  }
+
+
+  //把链表转成数组
+  function listToArray(head) {
+    if (head == null) {//如果值为空，返回一个空数组
+      return []
+    }
+    var result = []//创建一个空数组
+    while (head) {
+      result.push(head.val)//将head的val属性push进空数组
+      head = head.next//head的next属性通过循环变成下一次的head
+    }
+    return result//从head的val的值得到的数组 输出
+  }
+
+
+  //把链表转成数组(递归)
+  function listToArrayR(head) {
+    if (head == null) {
+      return []
+    }
+    var ary = listToArrayR(head.next)//ary = 函数的链表的next属性 因为是递归
+    return [head.val].concat(ary)//将head.val和ary拼接起来  从结尾开始平到前面 例:[4,3,2,1]
+  }
+
+
+  //把val的值放在head前面，然后返回新的链表
+  function prepend(val, head) {
+    return {
+      val: val,
+      next: head
+    }
+  }
+
+  //把val的值 放到head的末尾， 然后返回新的链表
+  function append(val, head) {
+    node = {//创建一个带val的值的节点
+      val: val,
+      next: null,
+    }
+    if (head == null) {//head的值如果是空
+      return node//添加进来的节点是唯一的节点，所以只能是新节点
+      var p = head
+      while (p.next) {//只有head.next属性能进去
+        p = p.next//通过循环使得p的链表连接上，下一个链表
+      }
+      p.next = node//将最后一个链表=带val的节点
+      return head
+    }
+  }
+
+  //返回list列表的第N个元素
+  function nth(list, n) {
+    if (list == null || n < 0) {
+      return undefined
+    }
+    var p = list//p=列表
+    var c = 0//计数器
+    while (p && c < n) {
+      c++//每走一步c++
+      p = p.next
+    }
+    if (p) {//如果p还指向节点，那一定是指向第n个节点了，所以输出这个节点的val
+      return p.val
+    } else {//反之输出 undefined
+      return undefined
+    }
+  }
+
+  //返回list列表的第n个元素(递归)
+  function nth2(list, n) {
+    if (list == null || n < 0) {//如果list=空或者n<0都返回undefined
+      return undefined
+    }
+    if (n == 0) {
+      return list.val//如果n=0，直接返回list的第一个属性
+    }
+    return nth(list.next, n - 1)//返回剩下的-1项
+  }
+
+
+  //在list链表的第n个位子放入val
+  function insert(list, n, val) {
+    var node = {//创建一个新数组
+      val = val,
+      next = null
+    }
+    if (n == 0) {//如果n为0
+      node.next = list//则新创建的节点为链表的前一项
+      return node//不能倒叙所以只能输出node节点
+    }
+    var p = list
+    var c = 0
+    while (p && c < n - 1) {
+      c++
+      p = p.next
+    }
+    var Q = p.next
+    p.next = node
+    node.next = Q
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  var minimumTotal = function (triangle) {   // leecode 120题  三角形数组最小路径和  从最底层最小累计
+    for (var i = triangle.length - 2; i >= 0; i--) {
+      for (var j = 0; j <= i; j++) {
+        triangle[i][j] += Math.min(triangle[i + 1][j], triangle[i + 1][j + 1])
+      }
+    }
+    return triangle[0][0]
+  };
+
+
+  var minimumTotal = function (triangle) {  // leecode 120题  三角形数组最小路径和  递归写法  有重复计算
+    function minSum(i, j) {
+      if (i == triangle.length - 1) {
+        return triangle[i][j]
+      }
+      return triangle[i][j] + Math.min(minSum(i + 1, j), minSum(i + 1, j + 1))
+    }
+    return minSum(0, 0)
+  };
+
+  var sortArray = function (nums) {       //数组排序 双重循环 选择排序  速度慢 从前到后排序   重点  面试题
+    var l = nums.length
+    for (var i = 0; i < l - 1; i++) {    // i   0到 数组倒数第二的位置
+      var min = i                        // 只需要记录最小数的下标 假设从 i 开始是最小的 i 递增
+      for (var j = i + 1; j < l; j++) {   // j    1到 组倒数第一的位置  比较大小
+        if (nums[min] > nums[j]) {        // 后续某位上的数比假定 最小值小 ，变更最小值下标  不需要等于
+          min = j
+        }
+      }
+      if (nums[min] < nums[i]) {       //  改变过的最小值小于最初的最小值
+        var max = nums[i]             //  则最大值等于第0项
+        nums[i] = nums[min]           //第0项=最小值
+        nums[min] = max              //由于最小值的已经被i取走，最小值等于最大值 第0项已经和j互换了
+      }
+    }
+    return nums
+  };
+
+
+  function insertSort(ary) {//数组排序 双重循环 插入排序 从前到后排序  较快   重点  面试题
+    for (i = 1; i < ary.length; i++) {//直接从第二个元素开始循环，i从1到最后一位
+      var A = ary[i] //记录此时i位置的值
+      for (j = i - 1; j >= 0; j--) {//j从i位到0位的倒序输出
+        if (ary[j] > A) {//当i的前一个元素>当前i元素
+          ary[j + 1] = ary[j]// 如果前一位大于i  把后一位值变更到 i 位，这时会修改i位的值 所以需要A
+        } else {
+          break //  如果前一位比后一位小 循环跳出 不执行后续赋值  i 进行下一个 进行判断
+        }
+      }
+      ary[j + 1] = A// 把前一位赋原来i位的值，相当于交换前后位置 循环继续判断
+    }
+    return ary
+  }
+
+
+  var bubbleSortArray = function (nums) {       //数组排序 双重循环 冒泡排序 从后往前排序 速度慢   重点 面试题
+    var l = nums.length
+    for (var i = l - 2; i >= 0; i--) {    // i 从倒数第二位开始向 0 位递减  i > 0时最后排的是 0 1 2 位， 必须i>=0
+      var swap = false                    //  设置提前结束条件，假设每次都没有发生交换
+      for (var j = 0; j <= i; j++) {   // j  从0 到i 项  j + 1 到达最后一项 循环从最后向前 位依次递减
+        if (nums[j] > nums[j + 1]) {     // 将最大值通过交换 变更到最后一项 后续比较 依次减少一位
+          var max = nums[j]
+          nums[j] = nums[j + 1]         // 当i = 0 时 比较 0 和 1 位 完成最后对比
+          nums[j + 1] = max
+          swap = true                 // 进入判断后 即发生了交换  如果某次遍历前j 项没有发生交换 即排序完成
+        }
+      }
+      if (!swap) {          // 某次遍历完没有发生交换 排序完成 swap 仍为假 非假进入判断 提前结束
+        return nums
+      }
+    }
+    return nums
+  };
+
+  var mergeSortArray = function (nums) {           //归并排序 拆分数组 递归写法   重点 面试题 该方法无法在原数组就地修改 排序
+    if (nums.length < 2) {                        // 递归结束条件 当数组长度小于2 时，不需要排序 返回
+      return nums
+    }
+    var mid = Math.floor(nums.length / 2)    // 将数组一分为二
+    var left = nums.slice(0, mid)             // 需创建新数组 承接 拆分的原数组 ，无法在原数组就地排序
+    var right = nums.slice(mid)              //  每次递归都会 拆分参数承接的数组
+
+    mergeSortArray(left)                      // 递归 给数组左边排序
+    mergeSortArray(right)                     // 递归 给数组右边排序
+
+    var i = 0                                             // 左边数组下标  排序被k接收后递增
+    var j = 0                                             // 右边数组下标  排序被k接收后递增
+    var k = 0                                             // 原数组下标，用于排序时按大小序接受 左右数组的数
+    while (i < left.length && j < right.length) {         // 循环条件 左右数组都没有排完时
+      if (left[i] < right[j]) {                           // 上面递归后左右数组都是有序的，比较left right 数组的最左边大小
+        nums[k++] = left[i++]                             // left 小填进原数组 同时 位 加一
+      } else {
+        nums[k++] = right[j++]                            // right 小 或者两边相等 填进原数组 同时 位 加一
+      }
+    }
+    while (i < left.length) {                             // 上面循环结束后 只有left 或者right 一个数组没有排完
+      nums[k++] = left[i++]                               // 没有排位的数组进入循环
+    }
+    while (j < right.length) {
+      nums[k++] = right[j++]
+    }
+    return nums                                          // 返回排位序的数组
+  };
+
+
+  //判断一个数组是否有序
+  function isSorted(ary) {
+    for (i = 1; i < ary.length; i++) {
+      if (ary[i] < ary[i + 1]) {
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+
+
+  //交换数组第i和第j项的值
+  function swap(ary, i, j) {
+    for (i = 0; i < ary.length; i++) {
+      var t = ary[i]
+      ary[i] = ary[j]
+      ary[j] = t
+    }
+    return ary
+  }
+
+
+  //每次选择剩下的部分中最小的
+  function selectsort(ary) {
+    for (i = 0; i < ary.length; i++) {
+      for (j = i + 1; j <= ary.length; j--) {
+        if (ary[i] > ary[j]) {
+          var A = ary[i]
+          ary[i] = ary[j]
+          ary[j] = A
+        }
+      }
+    }
+  }
+
+  //合并两个有序数组
+  function mergesort(ary) {
+    for (i = 0; i < ary.length; i++) {
+      var mid = Math.floor(ary.length / 2)
+      var left = ary.slice(0, mid)
+      var right = ary.slice(mid)
+    }
+  }
+
+
+
+  //冒泡排序(从后往前循环,最大的数移动到最后一位)
+  function bubblesort(ary) {
+    for (i = ary.length - 2; i >= 0; i--) {//ary长度-2一个是要有一个尾数还有一个是从0开始计算，所以-2
+      for (j = 0; j <= i; j++) {
+        if (ary[j] > ary[j + 1]) {
+          var t = ary[j]
+          ary[j] = ary[j + 1]
+          ary[j + 1] = t
+        }
+      }
+    }
+    return ary
+  }
+
+  //生成由N个由n以内的整数组成的随机数组
+  function randomAry(n) {
+    var A = []
+    for (i = 0; i <= n; i++) {
+      var B = Math.random()//生成一个随机数
+      A.push(Math.floor(B * n))//输出到A空数组，向下取整然后*n得出随机数
+      return A
+    }
+  }
+
+
+
+
+
+
+  //1924年25岁以内还年轻的人
+  function filter(array, test) {
+
+  }
+
+
+
+  //使用map函数转换数组
+  function map(A) {
+    var ages = []
+    for (i = 0; i <= A.length; i++) {
+      var p = A[i]
+
+    }
+  }
+
+  var ary = [1, 2, 3, 4, 5, 6]
+
+  function A(ary, b) {
+    var a = ary[0]
+    for (i = 0; i < ary.length; i++) {
+      b = f
+    }
+  }
+  reduce([1, 2, 3, 4, 5], (sum))
+
+
+
+
+  function reduce(ary, initial, f) {//进行数据汇总  reduce函数
+    for (i = 0; i < ary.length; i++) {
+      initial = f(initial, ary[i])
+    }
+    console.log(sum)
+
+  }
+
+
+
+  sum = 0
+  for (i = 0; i < ary.length; i++) {
+    sum = sum + ary[i]
+  }
+  console.log(sum)
+
+
+
+
+
+
+
+  //快排            面试至多三分
+  function quickSort(ary) {
+    if (ary.length < 2) {//递归结束条件
+      return ary.slice()//长度小于2也要返回新数组
+    }
+    //创建三个新数组
+    var randomIdx = Math.floor(Math.random() * ary.length)//取ary中一个随机数的下标
+    var prvot = ary[randomIdx]//ary的randomIdx下标的值    注:prvot是哨兵的意思
+    var left = []//创建出左边的数组
+    var mid = []//创建中间的数组
+    var right = []//创建了右边的数组
+
+    for (var i = 0; i < ary.length; i++) {
+      if (ary[i] > prvot) {
+        left.push(ary[i])
+      } else if (ary[i] == prvot) {
+        mid.push(ary[i])
+      } else if (ary[i] < prvot) {
+        right.push(ary[i])
+      }
+    }
+    //是要返回新的数组还是在就数组上调整
+    left = quickSort(left)//left的变量换掉，然后变成新的值然后再赋值，递归
+    right = quickSort(right)
+
+
+    //就地修改数组
+    quickSort(left)//left的变量换掉，然后变成新的值然后再赋值，递归
+    quickSort(right)
+    var i = 0
+    for (j = 0; j < left.length; j++) {//把这三个数组按顺序拷贝回原数组中
+      ary[i++] = left[j++]
+    }
+    for (j = 0; j < mid.length; j++) {
+      ary[i++] = mid[j++]
+    }
+    for (j = 0; j < right.length; j++) {
+      ary[i++] = right[j++]
+    }
+
+    return [...left, ...mid, ...right]//输出左   中   右 数组
+  }
+
+
+  //快排(正常的快排？)    就地调整 从数组ary的从start到end的元素进行快排
+  function qsortt(ary, start = 0, end = ary.length - 1) {//标注出范围
+    if (start >= end) {//0大于数组长度的时候直接输出数组
+      return ary
+    }
+    var randomIdx = Math.floor(Math.random() * (end - start + 1) + start)//取ary中一个随机数(end到start之间)的下标
+    var prvot = ary[randomIdx]//ary的randomIdx下标的值    注:prvot是哨兵的意思
+
+    swap(ary, randomIdx, end - 1)//两个变量数值交换   swap方法是指两个变量数值交换
+
+    var i = start//i用来记录
+    for (var j = start; j < end; j++) {//不遍历放在最后的哨兵元素
+      if (ary[j] < pivot) {//当j从前向后行走时，每到一个数小于哨兵元素的
+        swap(ary, i++, j)//就让就当
+      }
+    }
+    swap(ary, i, end)//将哨兵元素换回中间
+    //此时i到j之间的是大于哨兵元素的
+    //start到i-1之间是小于哨兵元素的
+    qsortt(ary, start, i - 1)//从0到i-1的值
+    qsortt(ary, i + 1, end)//从i到数组长度的值
+
+    return ary
+  }
+
+  //快排
+  function qsortt(ary, start = 0, end = ary.length - 1) {
+    if (start >= end) {
+      return ary
+    }
+    var randomIdx = Math.floor(Math.random() * (end - start + 1) + start)
+    var shaobing = ary[randomIdx]//ary的randomIdx下标的值    注:prvot是哨兵的意思
+
+    swap(ary, shaobing, end)
+
+    var i = start
+    var k = i
+    for (var j = start; j < end; j++) {
+      if (ary[j] < shaobing) {
+        if (i == k) {
+          swap(ary, i, j)
+        } else {
+          swap(ary, i, j)
+          swap(ary, k, j)
+        }
+        i++
+        k++
+      } else if (ary[j] == shaobing) {
+        swap(ary, j, k++)
+      }
+    }
+    swap(ary.end, k)
+
+    qsortt(ary, start, i - 1)
+    qsortt(ary, k + 1, end)
+    return ary
+  }
+
+  //函数flatten 的第二种写法
+  function flatten(ary) {
+    var result = []
+    for (var i = 0; i < ary.length; i++) {
+      let item = ary[i]
+      if (Array.isArray(item)) {
+        result.push(...item)
+      } else {
+        result(item)
+      }
+    }
+    return result
+  }
+
+  //函数flatten 的第三种写法
+  function flatten(ary) {
+    ary.reduce(() => {
+      if (Array.isArray(item)) {
+        result.push(...item)
+      } else {
+        result(item)
+      }
+      return result
+    }, [])
+  }
+
+  //函数flatten 的第四种写法
+  function flatten(ary) {
+    return ary.reduce((result, itm) => {
+      return result.concat(item)
+    }, [])
+  }
+
+  //函数flatten 的第五种写法        给你15分
+  function flatten(ary) {
+    return [].concat(...ary)
+    //[].concat
+
+  }
+
+
+  //第五章习题
+  function flatten(ary) {
+    return ary.reduce((result, item) => {
+
+    }, [])
+  }
+
+
+  //写法
+  function flatten(ary) {
+    return [].concat(...ary)
+  }
+
+  function flatten(ary) {
+    return [].concat.apply([], ary)
+  }
+
+
+
+
+  //深层次展平
+  function flattenDeep(ary) {
+
+  }
+
+
+  function mapValues(obj, mapper) {
+    for (var key in obj) {
+      result[key] = mapper(obj[key])
+    }
+    return result
+  }
+
+  function every(ary, predicare) {
+    var sum = 0
+    for (i = 0; i < ary.length; i++) {
+      if (predicare(ary[i]) == true) {
+        sum = 0
+      } else if (predicare(ary[i]) == false)
+        sum++
+    }
+    if (sum = 1)
+      return false
+  }
+
+
+  //创建结点
+  function jiedian(val) {
+    return {
+      val: val,
+      left: null,
+      right: null,
+    }
+  }
+
+
+  //将使用顺序数组的存放的根节点在rootPos位置的二叉树，转换为二叉链表
+  function aryToTree(ary, rootPos = 0) {
+    if (ary.length == 0) {//当ary的数组长度=0时，输出空
+      return null
+    }
+    if (ary[rootPos] == null) {//当根结点的值为空时也输出为空
+      return null
+    }
+    var mid = jiedian(ary[rootPos])//套用上一个函数创建ary的第一个节点
+    var leftjiedian = rootPos * 2 + 1 //使用公式推出左边的节点
+    var rightjiedian = rootPos * 2 + 2//使用公式推出右边的节点
+    var lefttree = aryToTree(ary, leftjiedian)//根据结点位置的值在数组中找到对应下标，创造出新左子节点
+    var righttree = aryToTree(ary, rightjiedian)//根据结点位置的值在数组中找到对应下标，创造出新左右子节点
+    mid.left = lefttree
+    mid.right = righttree
+    return mid
+  }
+
+
+
+  //从二叉链表转换成数组
+  function treeToAary(tree, idx = 0, ary = []) {//idx=根结点
+    if (tree) {
+      ary[idx] = tree.val //将根节点放入这里
+      treeToAary(tree, left, idx * 2 + 1, ary)//将左子树放入数组
+      treeToAary(tree, right, idx * 2 + 2, ary)//将右子树放入数组
+    }
+    return ary
+  }
+
+
+
+  function condensedAryToTree(ary, idx = 0) {
+    var nodes = []
+    if (ary.length == 0) {
+      return null
+    }
+
+
+    var root = createTreeNode(ary[0])//用数组的第一个元素创建根节点
+    nodes.push(root)//并存入结点数组
+
+    for (var i = 1; i < ary.length; i++)//遍历了两项
+      var current = nodes.shift()
+    var node
+    if (ary[i] == null) {
+      node = null
+    } else {
+      var node = condensedAryToTree(ary[i])
+      nodes.push(node)
+    }
+    current.left = node
+
+    i++//因为要遍历两项所以需要i再加一次
+
+    if (ary[i] == null) {
+      node = null
+    } else {
+      var node = condensedAryToTree(ary[i])
+      nodes.push(node)
+    }
+    current.right = node
+  }
+
+
+
+  function tree(ary) {
+
+  }
+</script>

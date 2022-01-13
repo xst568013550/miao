@@ -12,6 +12,8 @@ var xst568013550 = {
         wai.push(nei)
         nei = []
         sum = 0
+      } else (array.length != 0); {
+        wai.push(nei)
       }
     }
     return wai                                 //输出外数组

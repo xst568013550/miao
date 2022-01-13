@@ -1248,3 +1248,56 @@ var
     }
   }while(Math.abs(mid * mid - n)>0.0000001)
 </script>
+<script type="xxx">
+  debugger
+  var isPerfectSquare = function (num) {
+    var num = 16
+    for (i = 1; i * i <= num; i++) {
+      var a = i * i
+      if (a == num) {
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+</script>
+<script type="xxx">
+  function findSolution(target) {
+
+    var target = 151
+    var array = []
+
+    function find(start, history) {
+      if (start == target) {
+        array.push(history)
+        return
+      }
+      if (start > target) {
+        return
+      }
+      find(start * 3, '(' + history + ') * 3')
+      find(start + 5, history + ' + 5')
+    }
+
+    find(1, '1')
+    return array
+  }
+</script>
+<!-- <script>
+  function min(n) {
+    for (i = 1; i <= a.length; i++) {
+      if (n == 0) {
+        return '偶数'
+        console.log
+      } else if (n == 1) {
+        return '奇数'
+      } if (n = (n - 2) % 2 == 0) {
+        return '偶数'
+      } else if (n = (n - 2) % 2 != 0) {
+        return '奇数'
+      }
+
+    }
+  }
+</script> -->
