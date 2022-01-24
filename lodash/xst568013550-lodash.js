@@ -110,13 +110,16 @@ var xst568013550 = {
 
 
 
-  fromPairs: function fromPairs(pairs) {//数组返回一个对象
-    if (pairs.length == null) {
+  fromPairs: function fromPairs(pairs) {
+    if (pairs.length === null) {
       return {}
     }
     var result = {}
-    for (var i = 0; i < pairs - 1; i++) {
-      result.push(pairs[0] = pairs[1])
+    for (var i = 0; i < pairs.length; i++) {
+      var item = pairs[i]
+      var key = item[0]
+      var val = item[1]
+      result[key] = val
     }
     return result
   },
