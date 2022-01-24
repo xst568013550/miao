@@ -87,10 +87,9 @@ var xst568013550 = {
 
 
 
-
   flattenDepth: function flattenDepth(array, depth = 1) {                  //6
-    let a = []                                     //创建一个空数组
-    let sum = 0
+    var a = []                                     //创建一个空数组
+    var sum = 0
     for (var i = 0; i < array.length; i++) {
       let item = array[i]                      //array[i]的值给item
       if (Array.isArray(item)) {               //判断array的第i项是否是一个数组
@@ -109,6 +108,18 @@ var xst568013550 = {
     return a
   },
 
+
+
+  fromPairs: function fromPairs(pairs) {//数组返回一个对象
+    if (pairs.length == null) {
+      return {}
+    }
+    var result = {}
+    for (var i = 0; i < pairs - 1; i++) {
+      result.push(pairs[0] = pairs[1])
+    }
+    return result
+  },
 
 
   max: function (array) {                                  //7
@@ -134,9 +145,59 @@ var xst568013550 = {
     return A
   },
 
+  ary: function ary(func, n = func.length) {
+    var result = []
+    for (var i = 0; i < n; i++) {
+      return result.push(func[i])
+    }
+  },
+
+
+  unary: function unary(func) {
+    return function (...args) {
+      return func(...args, sline(0, 1))
+    }
+  },
 
 
 
+  negate: function negate(f) {
+    return function (...args) {
+      return !f(...agr)
+    }
+
+  },
+
+
+
+  spread: function spread(f) {
+    return function (...args) {
+      return f(...args)
+    }
+  },
+
+
+  flip: function flip(func) {
+    return function (...args) {
+      for (var i = func; i > 0; i--) {
+        func[i]
+      }
+    }
+  },
+
+
+
+  before: function before(f) {
+    return function (...args) {
+      return f
+    }
+  },
+
+  memoize: function memoize(func) {
+    return function (val) {
+
+    }
+  }
 }
 
 
